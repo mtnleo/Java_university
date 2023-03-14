@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
-public static void Main(String[] args)
-{
-    Scanner text = new Scanner(System.in);
-    System.out.PrintIn(text);
+class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String userName = scan.nextLine();  // Read user input
 
+        System.out.printIn(userName);
+    }
 }
