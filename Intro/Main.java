@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 class Main {
     public static void main(String[] args) {
         Character continuar = 'y';
@@ -67,11 +68,196 @@ class Main {
                     System.out.println("Valores despues: A = " + A4 + " B = " + B4 + " C = " + C4 + " D = " + D4); 
 
                     break;
-                
+
+                case 5: // declare una variable A de tipo entero, asignarle un valor. A continuación mostrar un mensaje indicando si A es par o impar
+                    System.out.println("Ejercicio 5.\n"); 
+
+                    //voy a hacerlo pidiendo input al usuario usando scan:
+                    System.out.println("Escriba un numero:"); 
+                    int A5 = scan.nextInt();
+
+                    if(A5 % 2 == 0) {
+                        System.out.println(A5 + " es par!"); 
+                    }
+                    else {
+                        System.out.println(A5 + " es impar!"); 
+                    }
+
+                    break;
+
+                case 6: //declare una variable B de tipo entero y asignarle un valor. A continuación mostrar un mensaje indicando si el valor de B es positivo o negativo.
+                    System.out.println("Ejercicio 6.\n"); 
+
+                    //voy a hacerlo pidiendo input al usuario usando scan:
+                    System.out.println("Escriba un numero:"); 
+                    int B6 = scan.nextInt();
+
+                    if(B6 >= 0) {
+                        System.out.println(B6 + " es positivo!"); 
+                    }
+                    else {
+                        System.out.println(B6 + " es negativo!"); 
+                    }
+
+                    break;
+
+                case 7: // declare una variable C de tipo entero y asignarle un valor. A continuación mostrar un mensaje indicando si el valor de C es positivo o negativo, si es par o impar, si es múltiplo de 5, si es múltiplo de 10 y si es mayor o menor que 100.
+                    System.out.println("Ejercicio 7.\n"); 
+
+                    //voy a hacerlo pidiendo input al usuario usando scan:
+                    System.out.println("Escriba un numero:"); 
+                    int C7 = scan.nextInt();
+
+                    if(C7 >= 0) {
+                        System.out.println(C7 + " es positivo!"); 
+                    }
+                    else {
+                        System.out.println(C7 + " es negativo!"); 
+                    }
+
+                    if(C7 % 2 == 0) {
+                        System.out.println(C7 + " es par!"); 
+                    }
+                    else {
+                        System.out.println(C7 + " es impar!"); 
+                    }
+
+                    if(C7 % 5 == 0) {
+                        System.out.println(C7 + " es multiplo de 5!"); 
+                    }
+                    else {
+                        System.out.println(C7 + " no es multiplo de 5!"); 
+                    }
+
+                    if(C7 % 10 == 0) {
+                        System.out.println(C7 + " es multiplo de 10!"); 
+                    }
+                    else {
+                        System.out.println(C7 + " no es multiplo de 10!"); 
+                    }
+
+                    if(C7 > 100) {
+                        System.out.println(C7 + " es mayor que 100!"); 
+                    }
+                    else {
+                        System.out.println(C7 + " es menor o igual que 100!"); 
+                    }
+
+                    break;
+
+                case 8: //lea un nombre y muestre por pantalla: “Buenos días, {NOMBRE}”.
+                    System.out.println("Ejercicio 8.\n"); 
+
+                    System.out.println("Escriba su nombre: "); 
+                    String nombre = scan.next();
+
+                    System.out.println("Buenos días, " + nombre); 
+
+                    break;
+
+                case 9: // lea un número entero por teclado y calcule el doble y el triple de ese número y lo muestre por pantalla.
+                    System.out.println("Ejercicio 9.\n"); 
+
+                    System.out.println("Escriba un numero:"); 
+                    int num = scan.nextInt();
+
+                    int num_doble = num * 2;
+                    int num_triple = num * 3;
+
+                    System.out.println("Numero -> " + num + "\nDoble = " + num_doble + "\nTriple = " + num_triple);
+                    
+                    break;
+
+                case 10: // lea una cantidad de grados Fahrenheit y lo convierta a grados centígrados
+                    System.out.println("Ejercicio 10.\n"); 
+
+                    System.out.println("Escriba una temperatura en Fahrenheit: "); 
+                    int temp = scan.nextInt();
+
+                    float temp_celsius = (temp - 32) * 0.5556f;
+
+                    System.out.println(temp + " en Celsius es = " + temp_celsius);
+
+                    break;
+
+                case 11: // lee por teclado el valor del radio de una circunferencia, calcula y muestra por pantalla la longitud y el área de la circunferencia.
+                    System.out.println("Ejercicio 11.\n");     
+
+                    System.out.println("Escriba el radio de la circunferencia: "); 
+                    int radio = scan.nextInt();
+                    float PI = 3.1415f;
+
+                    float longitud = (radio * 2) * PI;
+                    float area = PI * (radio * radio);
+
+                    System.out.println("Longitud -> " + longitud + "\nArea -> " + area);
+
+                    break;
+
+                case 12: // pase una velocidad en Km/h a m/s. La velocidad se lee por teclado.
+                    System.out.println("Ejercicio 12.\n");
+
+                    System.out.println("Escriba la velocidad en Km/h: "); 
+                    int velocidad_kmh = scan.nextInt();
+
+                    float velocidad_ms = velocidad_kmh / 3.6f;
+
+                    System.out.println("La velocidad en m/s: " + velocidad_ms); 
+
+                    break;
+
+                case 13: // lea la longitud de los catetos de un triángulo rectángulo y calcule la longitud de la hipotenusa según el teorema de Pitágoras.
+                    System.out.println("Ejercicio 13.\n");
+
+                    System.out.println("Escriba la longitud del cateto 1: ");
+                    int cateto1 = scan.nextInt();
+                    System.out.println("Escriba la longitud del cateto 2: ");
+                    int cateto2 = scan.nextInt();
+
+                    float hipotenusa = (float)Math.sqrt((cateto1*cateto1) + (cateto2*cateto2));
+
+                    System.out.println("El valor de la hipotenusa es: " + hipotenusa); 
+
+                    break;
+
+                case 14: // calcula el volumen de una esfera.
+                    System.out.println("Ejercicio 14.\n");
+
+                    float PI_2 = 3.1415f;
+
+                    System.out.println("Escriba el radio de la esfera: ");
+                    int radio_esfera = scan.nextInt();
+
+                    float volumen_esfera = ((float)4/3) * (PI_2 * ((float)radio_esfera*(float)radio_esfera*(float)radio_esfera));
+
+                    System.out.println("El volumen de la esfera de radio " + radio_esfera + " es = " + volumen_esfera);
+
+                    break;
+
+                case 15: // calcula el área de un triángulo a partir de la longitud de sus lados.
+                    System.out.println("Ejercicio 15.\n");
+
+                    System.out.println("Escriba el lado 1 del triangulo: ");
+                    int l1 = scan.nextInt();
+                    System.out.println("Escriba el lado 2 del triangulo: ");
+                    int l2 = scan.nextInt();
+                    System.out.println("Escriba el lado 3 del triangulo: ");
+                    int l3 = scan.nextInt();
+
+                    // usando la formula de Herón
+                    float s = ((float)l1 + (float)l2 + (float)l3) / 2;
+                    float area_t = (float)Math.sqrt(s * (s - l1) * (s - l2) * (s - l3));
+
+                    System.out.println("El area del triangulo es de: " + area_t);
+
+                    break;
+                    
+                /// DEFAULT
                 default:
                     System.out.println("|X| EJERCICIO INVALIDO |X|\n");
 
                     break;
+
             }
 
             System.out.println("Desea seguir viendo ejercicios? ('y'/'n')");
