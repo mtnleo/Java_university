@@ -252,6 +252,66 @@ class Main {
 
                     break;
                     
+                case 16: //lee un número de 3 cifras y muestra sus cifras por separado.
+                    System.out.println("Ejercicio 16.\n");
+
+                    System.out.println("Escriba un numero de 3 cifras: ");
+                    int cifras = scan.nextInt();
+
+                    String cifras_letras = Integer.toString(cifras);
+
+                    for(int i = 0; i < 3; i++) {
+                        System.out.println("Cifra #" + (i+1) + " = " + cifras_letras.charAt(i));
+                    }
+
+                    break;
+
+                case 17: // lea un número entero N de 5 cifras y muestre las cifras que ocupan posiciones impares.
+                    System.out.println("Ejercicio 17.\n");
+
+                    System.out.println("Escriba un numero de 5 cifras: ");
+                    int cifras_5 = scan.nextInt();
+
+                    String cifras_letras_5 = Integer.toString(cifras_5);
+
+                    for(int i = 0; i < 5; i = i + 2) {
+                        //considero impares segun el i: 0, 2, 4, 6, etc.
+                        System.out.println("Cifra #" + i + " = " + cifras_letras_5.charAt(i));
+                    }
+
+
+                    break;
+
+                case 18: // lea tres números enteros H, M, S que contienen hora, minutos y segundos respectivamente, y comprueba si la hora que indican es una hora válida.
+                    System.out.println("Ejercicio 18.\n");
+
+                    // delimitar las horas, minutos y segundos validos
+                    int HORAS = 24;
+                    int MINUTOS = 60;
+                    int SEGUNDOS = 60;
+
+                    System.out.println("Escriba las horas: ");
+                    int hor = scan.nextInt();
+                    System.out.println("Escriba los minutos: ");
+                    int min = scan.nextInt();
+                    System.out.println("Escriba los segundos: ");
+                    int seg = scan.nextInt();
+
+                    if (hor >= HORAS) {
+                        System.out.println("Las horas no son correctas!");
+                    }
+                    if (min >= MINUTOS) {
+                        System.out.println("Los minutos no son correctos!");
+                    }
+                    if (seg >= SEGUNDOS) {
+                        System.out.println("Los segundos no son correctos!");
+                    }
+                    else {
+                        System.out.println("El horario esta correcto!");
+                    }
+
+                    break;
+
                 /// DEFAULT
                 default:
                     System.out.println("|X| EJERCICIO INVALIDO |X|\n");
