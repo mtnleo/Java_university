@@ -98,7 +98,67 @@ class Main {
 
                     break;
 
-                /// DEFAULT
+                case 5: // Contar el numero de elementos positivos, negativos y ceros en un array de 10 enteros.
+                    System.out.println("Ejercicio 5. \n");
+
+                    int positivos = 0;
+                    int negativos = 0;
+                    int ceros = 0;
+
+                    int[] arr_int = {0, -3, -4, 7, 0, 2, 4, -1, 0, 9};
+
+                    for (int i5 = 0; i5 < 10; i5++) {
+                        if (arr_int[i5] == 0) {
+                            ceros++;
+                        }
+                        else if (arr_int[i5] > 0) {
+                            positivos++;
+                        }
+                        else {
+                            negativos++;
+                        }
+                    }
+
+                    System.out.println("Hay " + ceros + " ceros; " + positivos + " positivos; " + negativos + " negativos.");
+
+                    break;
+
+                case 6: // Llenar un array con numeros aleatorios
+                    System.out.println("Ejercicio 6. \n");
+
+                    int[] aleatorios = new int[10];
+
+                    int max = 100;
+                    int min = 1;
+                    int range = max - min + 1;
+
+                    for (int i6 = 0; i6 < 10; i6++) {
+                        aleatorios[i6] = (int)(Math.random() * range) + min;
+                    }
+
+                    for (int i6 = 0; i6 < 10; i6++) {
+                        System.out.println(aleatorios[i6]);;
+                    }
+
+                    break;
+
+                case 7: // Guardar en un array los 20 primeros numeros pares
+                    System.out.println("Ejercicio 7. \n");
+
+                    int[] pares = new int[10];
+
+                    for(int i7 = 1; i7 < 10; i7++) {
+                        pares[i7] = i7 * 2;
+                    }
+
+                    System.out.println("Primeros 20 numeros pares ->");
+                    for (int par: pares) {
+                        System.out.println(par);
+                    }
+
+                    break;
+
+                /// DEFAULT ------------------------------
                 default:
                     System.out.println("|X| EJERCICIO INVALIDO |X|\n");
 
