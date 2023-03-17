@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.ArrayList;
 
 class Main {
     public static void main(String[] args) {
@@ -155,6 +155,67 @@ class Main {
                     for (int par: pares) {
                         System.out.println(par);
                     }
+
+                    break;
+
+                case 8: // Calcular la altura media de los alumnos de una clase.
+                    System.out.println("Ejercicio 8.\n");
+
+                    Float[] altura = {1.92f, 1.83f, 1.65f, 1.78f, 1.59f, 1.76f, 1.90f, 1.50f, 1.65f, 1.68f};
+
+                    Float suma_altura = 0.0f;
+
+                    for (Float alumno: altura) {
+                        suma_altura += alumno;
+                    }
+
+                    Float promedio_altura = suma_altura / 10;
+
+                    System.out.println("El promedio de altura es de " + promedio_altura);
+
+                    break;
+
+                case 9: //  Leer numeros por teclado hasta introducir -99. Calcular la suma, la media y cuantos son mayores que la media.
+                    System.out.println("Ejercicio 9.\n");
+
+                    ArrayList<Integer> numeros_inf = new ArrayList<Integer>(); // Tenemos que usar un arraylist porque no sabemos el largo del Arreglo
+                    int numero = 0;
+
+                    while (numero != -99) {
+                        System.out.println("Escriba un numero o -99 para salir: ");
+                        numero = scan.nextInt();
+
+                        if (numero != -99) {
+                            numeros_inf.add(numero);
+                        }
+                    }
+
+                    System.out.println("ArrayList luego de llenarlo: " + numeros_inf);
+
+                    break;
+
+                case 10: // Rotar los elementos de un ArrayList.
+                    System.out.println("Ejercicio 10");
+
+                    ArrayList<String> rotar_arrlist = new ArrayList<String>();
+
+                    rotar_arrlist.add("Primero");
+                    rotar_arrlist.add("Segundo");
+                    rotar_arrlist.add("Ultimo");
+
+                    int i10 = 0;
+
+                    String aux;
+
+                    while(i10 < rotar_arrlist.size() / 2) {
+                        aux = rotar_arrlist.get(i10);
+                        rotar_arrlist.set(i10, rotar_arrlist.get(rotar_arrlist.size() - i10));
+                        rotar_arrlist.set(rotar_arrlist.size() - i10, aux);
+
+                        i10++;
+                    }
+
+                    System.out.println("ArrayList tras rotarlo: " + rotar_arrlist);
 
                     break;
 
