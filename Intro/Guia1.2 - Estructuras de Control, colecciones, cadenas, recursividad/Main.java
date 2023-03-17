@@ -201,6 +201,9 @@ class Main {
 
                     rotar_arrlist.add("Primero");
                     rotar_arrlist.add("Segundo");
+                    rotar_arrlist.add("Tercer");
+                    rotar_arrlist.add("Cuarto");
+                    rotar_arrlist.add("Quinto");
                     rotar_arrlist.add("Ultimo");
 
                     int i10 = 0;
@@ -209,8 +212,8 @@ class Main {
 
                     while(i10 < rotar_arrlist.size() / 2) {
                         aux = rotar_arrlist.get(i10);
-                        rotar_arrlist.set(i10, rotar_arrlist.get(rotar_arrlist.size() - i10));
-                        rotar_arrlist.set(rotar_arrlist.size() - i10, aux);
+                        rotar_arrlist.set(i10, rotar_arrlist.get(rotar_arrlist.size() - 1 - i10));
+                        rotar_arrlist.set(rotar_arrlist.size() - 1 - i10, aux);
 
                         i10++;
                     }
