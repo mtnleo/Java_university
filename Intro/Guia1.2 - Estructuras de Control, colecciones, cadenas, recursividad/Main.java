@@ -222,6 +222,31 @@ class Main {
 
                     break;
 
+                case 11: // Cadena mas larga contenida en un ArrayList de Strings.
+                    System.out.println("Ejercicio 11. \n");
+
+                    ArrayList<String> cadenas = new ArrayList<String>();
+
+                    cadenas.add("Tin");
+                    cadenas.add("Malena");
+                    cadenas.add("LongTincho");
+                    cadenas.add("Hernan");
+                    cadenas.add("Feliponciooooooooo");
+                    cadenas.add("Toto");
+                    cadenas.add("Jua");
+
+                    String longest = "";
+
+                    for (String cadena: cadenas) {
+                        if (cadena.length() > longest.length()) {
+                            longest = cadena;
+                        }
+                    }
+
+                    System.out.println("El string mas largo es " + longest);
+
+                    break;
+
                 /// DEFAULT ------------------------------
                 default:
                     System.out.println("|X| EJERCICIO INVALIDO |X|\n");
