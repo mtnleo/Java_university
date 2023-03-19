@@ -246,6 +246,26 @@ class Main {
                     System.out.println("El string mas largo es " + longest);
 
                     break;
+                
+                // GUIA 2.2 CADENAS Y EXPRESIONES REGULARES 
+
+                case 12: // Contar el numero de palabras de una frase en espanol.
+                    System.out.println("Ejercicio 12. \n");
+
+                    System.out.println("Escriba una frase: ");
+                    scan.nextLine(); // Para limpiar el scanner que previamente leyó un int
+                    String frase = scan.nextLine();
+                    int palabras = 1;
+
+                    for(int i12 = 0; i12 < frase.length(); i12++) {
+                        if(frase.charAt(i12) == ' ') {
+                            palabras++;
+                        }
+                    }
+
+                    System.out.println("Hay " + palabras + " palabras en esa frase.");
+
+                    break;
 
                 /// DEFAULT ------------------------------
                 default:
