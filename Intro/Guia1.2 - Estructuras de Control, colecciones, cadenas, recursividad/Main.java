@@ -250,7 +250,7 @@ class Main {
                 // GUIA 2.2 CADENAS Y EXPRESIONES REGULARES 
 
                 case 12: // Contar el numero de palabras de una frase en espanol.
-                    System.out.println("Ejercicio 12. \n");
+                    System.out.println("Ejercicio 2-1. \n");
 
                     System.out.println("Escriba una frase: ");
                     scan.nextLine(); // Para limpiar el scanner que previamente leyó un int
@@ -264,6 +264,30 @@ class Main {
                     }
 
                     System.out.println("Hay " + palabras + " palabras en esa frase.");
+
+                    break;
+
+                case 13: // Contar el numero de oraciones de una frase en espanol.
+
+                    System.out.println("Ejercicio 2-2. \n");
+
+                    System.out.println("Escriba una frase: ");
+                    scan.nextLine(); // Para limpiar el scanner que previamente leyó un int
+                    String frase_oracion = scan.nextLine();
+                    int palabras_oracion = 0;
+
+                    for(int i13 = 0; i13 < frase_oracion.length(); i13++) {
+                        if(frase_oracion.charAt(i13) == '.' || frase_oracion.charAt(i13) == '!' || frase_oracion.charAt(i13) == '?') {
+                            palabras_oracion++;
+                        }
+                    }
+
+                    System.out.println("Hay " + palabras_oracion + " oraciones en esa frase.");
+
+                    break;
+
+                case 14: // Contar el numero de silabas de una palabra en espanol.
+
 
                     break;
 
