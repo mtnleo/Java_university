@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "Intro/Guia1.2 - Estructuras de Control, colecciones, cadenas, recursividad",
         "Intro/Guia1 - Introduccion",
-        "Intro/Guia1.2 - Estructuras de Control, colecciones, cadenas, recursividad"
+        "Guia1 - Objetos"
     ]
 }
