@@ -62,6 +62,18 @@ public class Main {
 
                     break;
 
+                case 4:
+                    System.out.println("Ejercicio 4.");
+
+                    CuentaBanco cuenta1 = new CuentaBanco(9323, "Juancito", 15000);
+
+                    cuenta1.credito(2500);
+                    cuenta1.debito(1500);
+                    cuenta1.debito(30000);
+                    cuenta1.MostrarCuenta();
+
+                    break;
+
                 default:
                     System.out.println("|X| EJERCICIO INVALIDO |X|\n");
 
