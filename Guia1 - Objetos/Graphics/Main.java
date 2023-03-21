@@ -38,6 +38,30 @@ public class Main {
 
                     break;
 
+                case 2:
+                    System.out.println("Ejercicio 2.");
+
+                    Empleado empleado1 = new Empleado(23456345, "Carlos", "Gutierrez", 25000);
+                    Empleado empleado2 = new Empleado(34234123, "Ana", "Sanchez", 27500);
+
+                    empleado1.MostrarEmpleado();
+                    empleado2.MostrarEmpleado();
+
+                    System.out.println("Salario anual de Carlos antes del aumento: " + empleado1.saberSalarioAnual());
+                    empleado1.aumentarSalario(15);
+                    System.out.println("Salario anual de Carlos despues del aumento de 15%: " + empleado1.saberSalarioAnual());
+
+                    break;
+
+                case 3:
+                    System.out.println("Ejercicio 3.");
+
+                    ItemVenta ps4 = new ItemVenta(342346, "PS4 Poco uso", 10, 45000);
+
+                    ps4.MostrarItem();
+
+                    break;
+
                 default:
                     System.out.println("|X| EJERCICIO INVALIDO |X|\n");
 
