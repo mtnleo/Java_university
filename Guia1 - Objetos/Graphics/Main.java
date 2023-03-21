@@ -2,10 +2,6 @@ package Graphics;
 import java.util.Scanner;
 
 public class Main {
-
-    public class Rectangulo {
-
-    }
     public static void main(String[] args) {
         Character continuar = 'y';
         Scanner scan = new Scanner(System.in);
@@ -71,6 +67,15 @@ public class Main {
                     cuenta1.debito(1500);
                     cuenta1.debito(30000);
                     cuenta1.MostrarCuenta();
+
+                    break;
+
+                case 5:
+                    System.out.println("Ejercicio 5.");
+
+                    Hora time = new Hora(10, 22, 36);
+
+                    time.mostrarHora();
 
                     break;
 
