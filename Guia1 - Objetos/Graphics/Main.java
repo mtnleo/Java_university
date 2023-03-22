@@ -77,6 +77,16 @@ public class Main {
 
                     time.mostrarHora();
 
+                    time = time.correSegundo();
+
+                    time.mostrarHora();
+
+                    time = time.rebobinarSegundo();
+                    time = time.rebobinarSegundo();
+
+                    time.mostrarHora();
+
+
                     break;
 
                 default:

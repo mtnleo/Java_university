@@ -83,5 +83,11 @@ public class Hora {
         return this;
     }
 
+    public Hora rebobinarSegundo() {
+        this.segundo--;
+
+        return this;
+    }
+
 
 }
