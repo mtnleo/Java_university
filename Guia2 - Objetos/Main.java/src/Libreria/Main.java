@@ -18,6 +18,7 @@ public class Main {
                     System.out.println("Ejercicio 1.");
 
                     Autor autor1 = new Autor("Joshua", "Bloch", "joshua@email.com", 'M');
+                    Autor autor2 = new Autor("Javier", "Santaolalla", "javisanta@email.com", 'M');
 
                     autor1.mostrarAutor();
 
@@ -28,8 +29,10 @@ public class Main {
                     libro1.setPrecio(500);
                     libro1.setStock(libro1.getStock() + 50);
 
-                    libro1.mostrarAutorLibro();
+                    libro1.mostrarAutorLibro(0);
                     libro1.mostrarLibro();
+
+                    libro1.agregarAutor(autor2);
 
                     libro1.presentarLibro();
 
