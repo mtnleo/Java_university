@@ -1,3 +1,5 @@
+package Libreria;
+
 import java.util.Scanner;
 
 public class Main {
@@ -14,6 +16,22 @@ public class Main {
             switch(ejercicio) {
                 case 1:
                     System.out.println("Ejercicio 1.");
+
+                    Autor autor1 = new Autor("Joshua", "Bloch", "joshua@email.com", 'M');
+
+                    autor1.mostrarAutor();
+
+                    Libro libro1 = new Libro("Effective Java", 450, 150, autor1);
+
+                    libro1.mostrarLibro();
+
+                    libro1.setPrecio(500);
+                    libro1.setStock(libro1.getStock() + 50);
+
+                    libro1.mostrarAutorLibro();
+                    libro1.mostrarLibro();
+
+                    libro1.presentarLibro();
 
                     break;
 
