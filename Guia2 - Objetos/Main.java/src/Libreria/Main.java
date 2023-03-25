@@ -45,7 +45,14 @@ public class Main {
                     Cliente cliente1 = new Cliente("Martin Leonardi", "mtnleonardi@gmail.com", 15);
                     cliente1.MostrarCliente();
 
-                    Factura factura1 = new Factura(2000, cliente1);
+                    ItemVenta item1 = new ItemVenta("Logitech G203", "Mouse", 200);
+                    ItemVenta item2 = new ItemVenta("Redragon Kumara", "Teclado Mecanico", 400);
+                    ItemVenta item3 = new ItemVenta("Lenovo Ideapad Gaming 3", "Laptop", 3200);
+
+                    ItemVenta[] itemsComprados = {item1, item2, item3};
+
+
+                    Factura factura1 = new Factura( cliente1, itemsComprados);
                     factura1.mostrarFactura();
 
                     System.out.println("\nFactura luego de aplicar descuento: ");
