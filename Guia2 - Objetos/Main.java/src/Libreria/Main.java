@@ -2,6 +2,7 @@ package Libreria;
 
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
         Character continuar = 'y';
@@ -38,6 +39,20 @@ public class Main {
 
                     break;
 
+                case 2:
+                    System.out.println("Ejercicio 2.");
+
+                    Cliente cliente1 = new Cliente("Martin Leonardi", "mtnleonardi@gmail.com", 15);
+                    cliente1.MostrarCliente();
+
+                    Factura factura1 = new Factura(2000, cliente1);
+                    factura1.mostrarFactura();
+
+                    System.out.println("\nFactura luego de aplicar descuento: ");
+                    factura1.montoDescontado();
+                    factura1.mostrarFactura();
+
+                    break;
 
                 default:
                     System.out.println("|X| EJERCICIO INVALIDO |X|\n");
