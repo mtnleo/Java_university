@@ -61,6 +61,26 @@ public class Main {
 
                     break;
 
+                case 3:
+                    System.out.println("Ejercicio 3.");
+
+                    ClienteBanco cliente_banco1 = new ClienteBanco("Hernan Navarra", 'M');
+
+                    CuentaBancaria cuenta1 = new CuentaBancaria(42069, cliente_banco1);
+
+                    cliente_banco1.MostrarCliente();
+                    cuenta1.MostrarDatosCuenta();
+
+                    System.out.println("Se retiran $20,000 de la cuenta");
+                    cuenta1.RetirarDinero(20000);
+                    System.out.println("Se intenta retirar $90,000 de la cuenta");
+                    cuenta1.RetirarDinero(90000);
+
+                    System.out.println("Monto luego de las transacciones:");
+                    cuenta1.MostrarDatosCuenta();
+
+                    break;
+
                 default:
                     System.out.println("|X| EJERCICIO INVALIDO |X|\n");
                     break;
