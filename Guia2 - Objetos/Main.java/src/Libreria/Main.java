@@ -72,12 +72,18 @@ public class Main {
                     cuenta1.MostrarDatosCuenta();
 
                     System.out.println("Se retiran $20,000 de la cuenta");
-                    cuenta1.RetirarDinero(20000);
+                    double monto_retirado = cuenta1.RetirarDinero(20000);
                     System.out.println("Se intenta retirar $90,000 de la cuenta");
                     cuenta1.RetirarDinero(90000);
+                    System.out.println("Se retiran $23,000 de la cuenta");
+                    cuenta1.RetirarDinero(23000);
+                    System.out.println("Se depositan $73,000 de la cuenta");
+                    cuenta1.DepositarDinero(73000);
 
                     System.out.println("Monto luego de las transacciones:");
                     cuenta1.MostrarDatosCuenta();
+
+                    cuenta1.MostrarLog();
 
                     break;
 
