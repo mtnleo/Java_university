@@ -41,4 +41,8 @@ public class Cilindro extends Circulo {
         System.out.println("Altura: " + getAltura());
         System.out.println("Volumen: " + getVolumen());
     }
+
+    public double CalcularArea() {
+        return ((2 * Math.PI) * (getRadio() * getAltura()) + (2 * super.CalcularArea()));
+    }
 }

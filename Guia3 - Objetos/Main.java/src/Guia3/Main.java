@@ -23,6 +23,8 @@ public class Main {
                     Cilindro cil2 = new Cilindro(9, "Negro", 12);
                     cil2.MostrarDatosCilindro();
 
+                    System.out.println("Area Cilindro: " + cil2.CalcularArea());
+
                     break;
 
                 default:
