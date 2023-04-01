@@ -72,6 +72,40 @@ public class Main {
 
                     break;
 
+                case 3:
+                    System.out.println("Ejercicio 3.");
+
+                    // Instanciar Objetos
+
+                    Rectangulo rect1 = new Rectangulo("Violeta Pastel", 9, 12);
+                    Rectangulo rect2 = new Rectangulo();
+
+                    CirculoFig circ1 = new CirculoFig("Aquamarine", 2);
+                    CirculoFig circ2 = new CirculoFig();
+
+                    Cuadrado cuad1 = new Cuadrado("Verde Musgo", 5);
+                    Cuadrado cuad2 = new Cuadrado();
+
+                    // Mostrar Objetos
+
+                    System.out.println("\n----------------- Rectangulos. -----------------");
+
+                    rect1.Mostrar();
+                    rect2.Mostrar();
+
+                    System.out.println("\n----------------- Circulos. -----------------");
+
+                    circ1.Mostrar();
+                    circ2.Mostrar();
+
+                    System.out.println("\n----------------- Cuadrados. -----------------");
+
+                    cuad1.Mostrar();
+                    cuad2.Mostrar();
+
+
+                    break;
+
                 default:
                     System.out.println("|X| Escriba un numero de ejercicio valido |X|.\n");
                     break;
