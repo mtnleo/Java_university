@@ -25,7 +25,7 @@ public class Pelicula {
 
     // BUILDER ---------------------------------------------------
 
-    public Pelicula(String nombre, String genero, LocalDate fecha_lanzamiento, int duracion, String clasificacion, String pais, String descripcion) {
+    public Pelicula(String nombre, String genero, LocalDate fecha_lanzamiento, int duracion, String clasificacion, String pais, String descripcion, int copias) {
         this.nombre = nombre;
         this.genero = genero;
         this.fecha_lanzamiento = fecha_lanzamiento;
@@ -33,7 +33,13 @@ public class Pelicula {
         this.clasificacion = clasificacion;
         this.pais = pais;
         this.descripcion = descripcion;
+        this.copias = copias;
+    }
 
+    // METODOS ---------------------------------------------------
+
+    public boolean check_disponibilidad_pelicula() {
+        return getCopias() > 0;
     }
 
 }
