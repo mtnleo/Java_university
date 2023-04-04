@@ -13,7 +13,7 @@ public class Cliente {
 
     // BUILDER ---------------------------------------------------
 
-    public Cliente{
+    public Cliente(String nombre, String telefono, String direccion){
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;

@@ -11,6 +11,7 @@ public class Pelicula {
     protected String pais;
     protected String descripcion;
 
+    protected int veces_alquilada;
     protected int copias;
 
     // GETTERS & SETTERS ---------------------------------------------------
@@ -21,6 +22,14 @@ public class Pelicula {
 
     public void setCopias(int copias) {
         this.copias = copias;
+    }
+
+    public int getVeces_alquilada() {
+        return veces_alquilada;
+    }
+
+    public void setVeces_alquilada(int veces_alquilada) {
+        this.veces_alquilada = veces_alquilada;
     }
 
     // BUILDER ---------------------------------------------------
@@ -34,6 +43,7 @@ public class Pelicula {
         this.pais = pais;
         this.descripcion = descripcion;
         this.copias = copias;
+        this.veces_alquilada = 0;
     }
 
     // METODOS ---------------------------------------------------
