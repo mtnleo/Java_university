@@ -1,6 +1,7 @@
 package VideoStore;
 
 import java.time.LocalDate;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Videoclub {
@@ -55,10 +56,16 @@ public class Videoclub {
     public Pelicula BuscarPelicula(String nombre) {
         Pelicula peli_coincide = null;
         for (Pelicula peli: peliculas) {
-            if ((peli.nombre).startsWith(nombre)) {
-                peli_coincide = peli;
+            if (peli != null) {
+                if ((peli.nombre).toLowerCase().startsWith(nombre.toLowerCase())) {
+                    peli_coincide = peli;
+                    break;
+                }
+            }
+            else {
                 break;
             }
+
 
         }
         return peli_coincide;
@@ -192,27 +199,38 @@ public class Videoclub {
 
     public void mostrarTodasPeliculas() {
         for (Pelicula peli: peliculas) {
-            mostrarPelicula(peli);
+            if (peli != null) {
+                mostrarPelicula(peli);
+            }
+            else {
+                break;
+            }
         }
     }
 
     public void mostrarTodosClientes() {
         for (Cliente clien: clientes) {
-            mostrarCliente(clien);
-        }
-    }
+            if (clien != null) {
+                mostrarCliente(clien);
+            }
+            else {
+                break;
+            }
 
-    public void mostrarTodasFacturas() {
-        for (Factura factu: alquileres) {
-            mostrarFactura(factu);
         }
     }
 
     public void mostrarAlquileresVigentes() {
         for (Factura factu: alquileres) {
-            if (!factu.isDevuelto()) {
-                mostrarFactura(factu);
+            if (factu != null) {
+                if (!factu.isDevuelto()) {
+                    mostrarFactura(factu);
+                }
             }
+            else {
+                break;
+            }
+
         }
     }
 

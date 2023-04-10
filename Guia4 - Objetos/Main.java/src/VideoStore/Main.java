@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        int switch_opc = scan.nextInt();
+
         String cont = "y";
 
         //HARDCODE --------------------------
@@ -96,24 +96,38 @@ public class Main {
 
         while (cont.equals("y")) {
 
+            System.out.println("--------- Escoja una opcion --------- ");
+            System.out.println("| 1 | VER PELICULAS\n| 2 | BUSCAR PELICULA\n| 3 | ALQUILAR PELICULA\n| 4 | DEVOLVER PELICULA\n| 5 | VER CLIENTES\n| 6 | VER ALQUILERES VIGENTES\n| 7 | VER ALQUILERES CLIENTE\n| 8 | VER DEVOLUCIONES HOY");
+
+            int switch_opc = scan.nextInt();
+            scan.nextLine();
+
             switch (switch_opc) {
                 case 1:
-                    System.out.println("| 1 | VER PELICULAS");
+                    System.out.println("VER PELICULAS");
 
                     videoclub.mostrarTodasPeliculas();
 
                     break;
 
                 case 2:
-                    System.out.println("| 2 | BUSCAR PELICULA");
+                    System.out.println("BUSCAR PELICULA");
 
                     System.out.print("Escriba el nombre de la pelicula: ");
-                    videoclub.BuscarPelicula(scan.nextLine());
+                    String nombre_peli_buscar = scan.nextLine();
+                    Pelicula peli_buscada = videoclub.BuscarPelicula(nombre_peli_buscar);
+
+                    if (peli_buscada != null) {
+                        videoclub.mostrarPelicula(peli_buscada);
+                    }
+                    else {
+                        System.out.println("No se encontro la pelicula buscada");
+                    }
 
                     break;
 
                 case 3:
-                    System.out.println("| 3 | ALQUILAR PELICULA");
+                    System.out.println("ALQUILAR PELICULA");
 
                     String nombre_pelicula_alquilar;
 
@@ -139,7 +153,7 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("| 4 | DEVOLVER PELICULA");
+                    System.out.println("DEVOLVER PELICULA");
 
                     String nombre_pelicula_devolver;
 
@@ -154,25 +168,25 @@ public class Main {
                     break;
 
                 case 5:
-                    System.out.println("| 5 | VER CLIENTES");
+                    System.out.println("VER CLIENTES");
 
                     videoclub.mostrarTodosClientes();
 
                     break;
 
                 case 6:
-                    System.out.println("| 6 | VER ALQUILERES VIGENTES");
+                    System.out.println("VER ALQUILERES VIGENTES");
 
                     videoclub.mostrarAlquileresVigentes();
 
                     break;
 
                 case 7:
-                    System.out.println("| 7 | VER ALQUILERES CLIENTE");
+                    System.out.println("VER ALQUILERES CLIENTE");
                     break;
 
                 case 8:
-                    System.out.println("| 8 | VER DEVOLUCIONES HOY");
+                    System.out.println("VER DEVOLUCIONES HOY");
                     break;
 
 
