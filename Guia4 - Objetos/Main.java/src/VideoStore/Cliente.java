@@ -17,17 +17,10 @@ public class Cliente {
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
+        this.facturas = new Factura[20];
     }
 
     // METODOS ---------------------------------------------------
 
-    public Factura GenerarFactura(Pelicula pelicula) {
-        if (pelicula.check_disponibilidad_pelicula()) {
-            //AGREGAR FACTURA AL ARREGLO
-        }
-        else {
-            return null;
-        }
-    }
 
 }

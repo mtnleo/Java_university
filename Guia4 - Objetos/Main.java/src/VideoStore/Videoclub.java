@@ -208,6 +208,14 @@ public class Videoclub {
         }
     }
 
+    public void mostrarAlquileresVigentes() {
+        for (Factura factu: alquileres) {
+            if (!factu.isDevuelto()) {
+                mostrarFactura(factu);
+            }
+        }
+    }
+
     public void mostrarPelicula(Pelicula peli) {
         System.out.println("---------------------------");
         System.out.println("Nombre: " + peli.nombre);
