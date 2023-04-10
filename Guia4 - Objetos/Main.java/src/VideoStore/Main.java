@@ -13,13 +13,13 @@ public class Main {
 
             switch (switch_opc) {
                 case 1:
-                    System.out.println("Opción 1 seleccionada");
+                    System.out.println("| 1 | VER PELICULAS");
                     break;
                 case 2:
-                    System.out.println("Opción 2 seleccionada");
+                    System.out.println("| 2 | ALQUILAR PELICULA");
                     break;
                 case 3:
-                    System.out.println("Opción 3 seleccionada");
+                    System.out.println("| 3 | DEVOLVER PELICULA");
                     break;
 
 

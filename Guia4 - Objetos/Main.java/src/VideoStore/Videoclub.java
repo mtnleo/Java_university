@@ -1,6 +1,7 @@
 package VideoStore;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Videoclub {
     public Cliente[] clientes;
@@ -50,6 +51,7 @@ public class Videoclub {
     // METODOS ---------------------------------------------------
 
     //busqueda
+
     public Pelicula BuscarPelicula(String nombre) {
         Pelicula peli_coincide = null;
         for (Pelicula peli: peliculas) {
@@ -62,10 +64,10 @@ public class Videoclub {
         return peli_coincide;
     }
 
-    public Cliente BuscarCliente(Cliente cliente) {
+    public Cliente BuscarCliente(String telefono) {
         Cliente cliente_coincide = null;
         for (Cliente clien: clientes) {
-            if (cliente == clien) {
+            if (telefono.equals(clien.telefono)) {
                 cliente_coincide = clien;
                 break;
             }
@@ -73,21 +75,81 @@ public class Videoclub {
         return cliente_coincide;
     }
 
+    public Factura BuscarFactura(Cliente cliente, String nombre_pelicula) {
+        Factura fact_coincide = null;
+
+        for (Factura fact: cliente.facturas) {
+            if (fact.pelicula.nombre.equals(nombre_pelicula)) {
+                fact_coincide = fact;
+            }
+        }
+
+        return fact_coincide;
+    }
+
     //ALQUILAR
 
-    public void Alquilar(String nombre_pelicula, Cliente cliente) {
+    public void Alquilar(String nombre_pelicula, String telefono_cliente) {
         Pelicula peli = BuscarPelicula(nombre_pelicula);
+
         if (peli != null) {
-            if (BuscarCliente(cliente) == null) {
-                AgregarCliente(cliente);
+            Cliente clien = BuscarCliente(telefono_cliente);
+            if (BuscarCliente(telefono_cliente) == null) {
+                System.out.println("--- Crear un nuevo cliente ---");
+
+                clien = CrearCliente();
+                AgregarCliente(clien);
             }
 
-            Factura factura = new Factura(peli, cliente);
+            Factura factura = new Factura(peli, clien);
             AgregarAlquiler(factura);
 
         }
         else {
             System.out.println("|X| No se encontro la pelicula buscada |X|");
+        }
+    }
+
+    public Cliente CrearCliente() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Ingrese el nombre: ");
+        String nombre = scan.nextLine();
+        System.out.print("Ingrese el telefono: ");
+        String tel = scan.nextLine();
+        System.out.print("Ingrese la direccion: ");
+        String dir = scan.nextLine();
+
+
+        Cliente clien = new Cliente(nombre, tel, dir);
+        scan.close();
+
+        return clien;
+    }
+
+    // devoluciones
+
+    public void Devolver(String tel_cliente, String nombre_pelicula) {
+        Cliente clien = BuscarCliente(tel_cliente);
+
+        if (clien != null) {
+            Factura fact = BuscarFactura(clien, nombre_pelicula);
+            if (fact != null) {
+                if (fact.isDevuelto()) {
+                    (fact.pelicula).setVeces_alquilada(fact.pelicula.getVeces_alquilada() + 1);
+                    (fact.pelicula).setCopias(fact.pelicula.getCopias() + 1);
+                    fact.AnotarDevolucion();
+                }
+                else {
+                    System.out.println("|X| Esta pelicula ya fue devuelta |X|");
+                }
+            }
+            else {
+                System.out.println("|X| No se encontro la factura buscada |X|");
+            }
+        }
+        else {
+            System.out.println("|X| No se encontro al cliente buscado |X|");
         }
     }
 
