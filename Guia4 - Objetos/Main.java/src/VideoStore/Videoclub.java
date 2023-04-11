@@ -62,10 +62,6 @@ public class Videoclub {
                     break;
                 }
             }
-            else {
-                break;
-            }
-
 
         }
         return peli_coincide;
@@ -74,9 +70,10 @@ public class Videoclub {
     public Cliente BuscarCliente(String telefono) {
         Cliente cliente_coincide = null;
         for (Cliente clien: clientes) {
-            if (telefono.equals(clien.telefono)) {
-                cliente_coincide = clien;
-                break;
+            if (clien != null) {
+                if (telefono.equals(clien.telefono)) {
+                    cliente_coincide = clien;
+                }
             }
         }
         return cliente_coincide;
@@ -86,8 +83,10 @@ public class Videoclub {
         Factura fact_coincide = null;
 
         for (Factura fact: cliente.facturas) {
-            if (fact.pelicula.nombre.equals(nombre_pelicula)) {
-                fact_coincide = fact;
+            if (fact != null) {
+                if (fact.pelicula.nombre.equals(nombre_pelicula)) {
+                    fact_coincide = fact;
+                }
             }
         }
 
@@ -101,7 +100,7 @@ public class Videoclub {
 
         if (peli != null) {
             Cliente clien = BuscarCliente(telefono_cliente);
-            if (BuscarCliente(telefono_cliente) == null) {
+            if (clien == null) {
                 System.out.println("--- Crear un nuevo cliente ---");
 
                 clien = CrearCliente();
@@ -110,6 +109,9 @@ public class Videoclub {
 
             Factura factura = new Factura(peli, clien);
             AgregarAlquiler(factura);
+            clien.AgregarAlquilerCliente(factura);
+            peli.setVeces_alquilada(peli.getVeces_alquilada() + 1);
+            peli.setCopias(peli.getCopias() - 1);
 
         }
         else {
@@ -127,11 +129,8 @@ public class Videoclub {
         System.out.print("Ingrese la direccion: ");
         String dir = scan.nextLine();
 
+        return new Cliente(nombre, tel, dir);
 
-        Cliente clien = new Cliente(nombre, tel, dir);
-        scan.close();
-
-        return clien;
     }
 
     // devoluciones
@@ -191,7 +190,7 @@ public class Videoclub {
             this.alquileres[val_factura] = factura_agregar;
             setValidos_alquileres(val_factura + 1);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("|X| No entran mas peliculas |X|");
+            System.out.println("|X| No entran mas alquileres |X|");
         }
     }
 
@@ -234,6 +233,20 @@ public class Videoclub {
         }
     }
 
+    public void mostrarAlquileresCliente(Cliente cliente) {
+        for (Factura factu: cliente.facturas) {
+            if (factu != null) {
+                if (!factu.isDevuelto()) {
+                    mostrarFactura(factu);
+                }
+            }
+            else {
+                break;
+            }
+
+        }
+    }
+
     public void mostrarPelicula(Pelicula peli) {
         System.out.println("---------------------------");
         System.out.println("Nombre: " + peli.nombre);
@@ -253,6 +266,14 @@ public class Videoclub {
         System.out.println("Cliente: " + factura.cliente.nombre);
         System.out.println("Fecha retirado: " + factura.fecha_retirado.toString());
         System.out.println("Fecha devolucion: " + factura.fecha_vencimiento.toString());
+        if(factura.isDevuelto()) {
+            System.out.println("Devuelto: Si");
+        }
+        else {
+            System.out.println("Devuelto: No");
+        }
+
+
     }
 
     public void mostrarCliente(Cliente cliente) {

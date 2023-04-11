@@ -183,6 +183,20 @@ public class Main {
 
                 case 7:
                     System.out.println("VER ALQUILERES CLIENTE");
+
+                    System.out.print("Escriba el telefono del cliente: ");
+                    String tel_cliente_ver = scan.nextLine();
+
+                    Cliente cliente_ver_alq = videoclub.BuscarCliente(tel_cliente_ver);
+
+                    if (cliente_ver_alq != null) {
+                        videoclub.mostrarAlquileresCliente(cliente_ver_alq);
+                    }
+                    else {
+                        System.out.print("No se encontro el cliente");
+                    }
+
+
                     break;
 
                 case 8:
