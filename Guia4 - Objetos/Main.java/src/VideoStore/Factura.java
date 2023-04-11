@@ -37,6 +37,14 @@ public class Factura {
         this.devuelto = false;
     }
 
+    public Factura(Pelicula pelicula, Cliente cliente, LocalDate fecha_vencimiento) {
+        this.pelicula = pelicula;
+        this.cliente = cliente;
+        this.fecha_retirado = LocalDate.now();
+        this.fecha_vencimiento = fecha_vencimiento;
+        this.devuelto = false;
+    }
+
     // METODOS ---------------------------------------------------
 
     public void DisminuirCopias() {

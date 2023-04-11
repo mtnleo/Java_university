@@ -94,10 +94,16 @@ public class Main {
         videoclub.AgregarCliente(cliente4);
         videoclub.AgregarCliente(cliente5);
 
+        Factura factura1 = new Factura(pelicula2, cliente1, LocalDate.now());
+        Factura factura2 = new Factura(pelicula5, cliente2, LocalDate.now());
+
+        videoclub.AgregarAlquiler(factura1);
+        videoclub.AgregarAlquiler(factura2);
+
         while (cont.equals("y")) {
 
             System.out.println("--------- Escoja una opcion --------- ");
-            System.out.println("| 1 | VER PELICULAS\n| 2 | BUSCAR PELICULA\n| 3 | ALQUILAR PELICULA\n| 4 | DEVOLVER PELICULA\n| 5 | VER CLIENTES\n| 6 | VER ALQUILERES VIGENTES\n| 7 | VER ALQUILERES CLIENTE\n| 8 | VER DEVOLUCIONES HOY\n| 9 | VER TITULOS MAS ALQUILADOS");
+            System.out.println("| 1 | VER PELICULAS\n| 2 | BUSCAR PELICULA\n| 3 | ALQUILAR PELICULA\n| 4 | DEVOLVER PELICULA\n| 5 | VER CLIENTES\n| 6 | VER ALQUILERES VIGENTES\n| 7 | VER ALQUILERES CLIENTE\n| 8 | VER DEVOLUCIONES HOY\n| 9 | VER TITULOS MAS ALQUILADOS\n| 10 | VER TITULOS MAS POPULARES\n| 11 | BUSCAR POR GENERO");
 
             int switch_opc = scan.nextInt();
             scan.nextLine();
@@ -201,12 +207,33 @@ public class Main {
 
                 case 8:
                     System.out.println("VER DEVOLUCIONES HOY");
+
+                    videoclub.mostrarDevolucionesHoy();
+
                     break;
 
                 case 9:
                     System.out.println("VER TITULOS MAS ALQUILADOS");
 
                     videoclub.mostrarMasAlquiladas();
+
+                    break;
+
+                case 10:
+                    System.out.println("VER TITULOS MAS POPULARES");
+
+                    videoclub.mostrarMasAlquiladas();
+
+                    break;
+
+                case 11:
+                    System.out.println("BUSCAR POR GENERO");
+
+                    System.out.println("Escriba el genero buscado: ");
+                    String genero_buscado = scan.nextLine();
+
+                    videoclub.mostrarPorGenero(genero_buscado);
+
 
                     break;
 

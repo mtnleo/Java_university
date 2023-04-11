@@ -241,6 +241,38 @@ public class Videoclub {
 
     //mostrar
 
+    public void mostrarDevolucionesHoy() {
+        for (Factura factu: alquileres) {
+            if (factu != null) {
+                if (!factu.isDevuelto()) {
+                    System.out.println(factu.fecha_vencimiento.compareTo(LocalDate.now()));
+                    if (factu.fecha_vencimiento.compareTo(LocalDate.now()) == 0) {
+                        mostrarFactura(factu);
+                    }
+
+                }
+            }
+            else {
+                break;
+            }
+        }
+    }
+
+    public void mostrarPorGenero(String genero) {
+        boolean encontrada = false;
+        for (Pelicula peli: peliculas) {
+            if (peli != null) {
+                if (peli.genero.toLowerCase().startsWith(genero.toLowerCase())) {
+                    encontrada = true;
+                    mostrarPelicula(peli);
+                }
+            }
+        }
+        if (!encontrada) {
+            System.out.println("Escriba un genero valido.");
+        }
+    }
+
     public void mostrarMasAlquiladas() {
         Pelicula[] mas_alquiladas = BuscarPelisMasAlquiladas();
         for (Pelicula peli: mas_alquiladas) {
