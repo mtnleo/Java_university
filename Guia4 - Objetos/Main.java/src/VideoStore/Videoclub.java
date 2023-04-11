@@ -133,6 +133,51 @@ public class Videoclub {
 
     }
 
+    public boolean VerificarExistePeliculaArreglo(Pelicula[] pelis, Pelicula peli_verificar) {
+        boolean existe = false;
+        for (Pelicula peli: pelis) {
+            if (peli != null) {
+                if (peli == peli_verificar) {
+                    existe = true;
+                }
+            }
+        }
+        return existe;
+    }
+
+
+    public Pelicula BuscarMasAlquilada(Pelicula[] ignoradas, Pelicula[] arr_pelis) {
+        int cant_alq = 0;
+        Pelicula peli_mas_alquilada = null;
+
+        for (Pelicula peli: arr_pelis) {
+            if (peli != null) {
+                if (peli.veces_alquilada >= cant_alq) {
+                    if (!VerificarExistePeliculaArreglo(ignoradas, peli)) {
+                        peli_mas_alquilada = peli;
+                        cant_alq = peli_mas_alquilada.veces_alquilada;
+                    }
+                }
+            }
+            else {
+                break;
+            }
+
+        }
+
+        return peli_mas_alquilada;
+    }
+
+    public Pelicula[] BuscarPelisMasAlquiladas() {
+        Pelicula[] arr_mayores = new Pelicula[3];
+
+        for (int i = 0; i < 3; i++) {
+            arr_mayores[i] = BuscarMasAlquilada(arr_mayores, peliculas);
+        }
+
+        return arr_mayores;
+    }
+
     // devoluciones
 
     public void Devolver(String tel_cliente, String nombre_pelicula) {
@@ -195,6 +240,18 @@ public class Videoclub {
     }
 
     //mostrar
+
+    public void mostrarMasAlquiladas() {
+        Pelicula[] mas_alquiladas = BuscarPelisMasAlquiladas();
+        for (Pelicula peli: mas_alquiladas) {
+            if (peli != null) {
+                mostrarPelicula(peli);
+            }
+            else {
+                break;
+            }
+        }
+    }
 
     public void mostrarTodasPeliculas() {
         for (Pelicula peli: peliculas) {

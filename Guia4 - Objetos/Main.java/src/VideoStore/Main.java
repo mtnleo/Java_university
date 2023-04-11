@@ -97,7 +97,7 @@ public class Main {
         while (cont.equals("y")) {
 
             System.out.println("--------- Escoja una opcion --------- ");
-            System.out.println("| 1 | VER PELICULAS\n| 2 | BUSCAR PELICULA\n| 3 | ALQUILAR PELICULA\n| 4 | DEVOLVER PELICULA\n| 5 | VER CLIENTES\n| 6 | VER ALQUILERES VIGENTES\n| 7 | VER ALQUILERES CLIENTE\n| 8 | VER DEVOLUCIONES HOY");
+            System.out.println("| 1 | VER PELICULAS\n| 2 | BUSCAR PELICULA\n| 3 | ALQUILAR PELICULA\n| 4 | DEVOLVER PELICULA\n| 5 | VER CLIENTES\n| 6 | VER ALQUILERES VIGENTES\n| 7 | VER ALQUILERES CLIENTE\n| 8 | VER DEVOLUCIONES HOY\n| 9 | VER TITULOS MAS ALQUILADOS");
 
             int switch_opc = scan.nextInt();
             scan.nextLine();
@@ -201,6 +201,13 @@ public class Main {
 
                 case 8:
                     System.out.println("VER DEVOLUCIONES HOY");
+                    break;
+
+                case 9:
+                    System.out.println("VER TITULOS MAS ALQUILADOS");
+
+                    videoclub.mostrarMasAlquiladas();
+
                     break;
 
 
