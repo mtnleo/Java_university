@@ -79,7 +79,7 @@ public class Persona {
         this.peso = peso;
     }
 
-    public int getAltura() {
+    public double getAltura() {
         return altura;
     }
 
@@ -132,5 +132,20 @@ public class Persona {
         int maximo = 99999999;
         Random random = new Random();
         return String.valueOf(random.nextInt(maximo - minimo + 1) + minimo);
+    }
+
+    public String informeIMC() {
+        int imc = calcularIMC();
+        String msj;
+        if(imc == -1) {
+            msj = "Esta muy underweight";
+        }
+        else if(imc == 0) {
+            msj = "Peso ideal";
+        }
+        else {
+            msj = "Esta overweight";
+        }
+        return msj;
     }
 }

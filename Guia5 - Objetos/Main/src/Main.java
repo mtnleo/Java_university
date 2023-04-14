@@ -20,18 +20,28 @@ public class Main {
                     String nombre1 = scan.nextLine();
                     System.out.println("Escriba la edad: ");
                     int edad1 = scan.nextInt();
+                    scan.nextLine();
                     System.out.println("Escriba el sexo (m/h): ");
                     char sexo1 = scan.nextLine().charAt(0);
                     System.out.println("Escriba el peso (en kg): ");
                     double peso1 = scan.nextDouble();
-                    System.out.println("Escriba la altura: ");
+                    scan.nextLine();
+                    System.out.println("Escriba la altura (en mts con coma ','): ");
                     double altura1 = scan.nextDouble();
+                    scan.nextLine();
                     System.out.println("Escriba el DNI: ");
                     String dni1 = scan.nextLine();
 
                     Persona persona1 = new Persona(nombre1, edad1, dni1, sexo1, peso1, altura1);
                     Persona persona2 = new Persona("Manela", 24, 'm');
                     Persona persona3 = new Persona();
+
+                    System.out.println("La persona " + persona1.getNombre() + " " + persona1.informeIMC());
+                    System.out.println("La persona " + persona2.getNombre() + " " + persona2.informeIMC());
+                    System.out.println("La persona " + persona3.getNombre() + " " + persona3.informeIMC());
+
+                    //mostrar si es mayor de edad
+                    //mostrar toString
 
 
                     break;
