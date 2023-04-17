@@ -50,4 +50,12 @@ public class Circulo {
         System.out.println("Area: " + getArea());
     }
 
+    @Override
+    public String toString() {
+        return "Circulo{" +
+                "radio=" + radio +
+                ", color='" + color + '\'' +
+                ", area=" + area +
+                '}';
+    }
 }

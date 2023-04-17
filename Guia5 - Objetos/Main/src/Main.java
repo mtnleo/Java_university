@@ -1,3 +1,4 @@
+import Guia5.Password;
 import Guia5.Persona;
 
 import java.util.Scanner;
@@ -41,14 +42,36 @@ public class Main {
                     System.out.println("La persona " + persona3.getNombre() + " " + persona3.informeIMC());
 
                     //mostrar si es mayor de edad
+                    if (persona1.esMayorDeEdad()) {
+                        System.out.println("La persona " + persona1.getNombre() + " es mayor de edad.");
+                    }
+                    if (persona2.esMayorDeEdad()) {
+                        System.out.println("La persona " + persona2.getNombre() + " es mayor de edad.");
+                    }
+                    if (persona3.esMayorDeEdad()) {
+                        System.out.println("La persona " + persona3.getNombre() + " es mayor de edad.");
+                    }
+
                     //mostrar toString
+                    System.out.println(persona1.toString());
+                    System.out.println(persona2.toString());
+                    System.out.println(persona3.toString());
 
 
                     break;
+
                 case 2:
                     System.out.println("Ejercicio 2.");
 
+                    Password pass1 = new Password();
+                    Password pass2 = new Password(23);
+                    System.out.println(pass1.getPassword() + pass1.esFuerte());
+                    System.out.println(pass2.getPassword() + pass2.esFuerte());
+
+
                     break;
+
+
                 default:
                     System.out.println("|X| ESCRIBA UN EJERCICIO VALIDO |X|");
 
