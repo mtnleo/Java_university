@@ -1,5 +1,4 @@
-import Guia5.Password;
-import Guia5.Persona;
+import Guia5.*;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -90,6 +89,23 @@ public class Main {
 
                 case 3:
                     System.out.println("Ejercicio 3.");
+
+                    Electrodomestico[] electrodomesticos = new Electrodomestico[10];
+                    electrodomesticos[0] = new Electrodomestico();
+                    electrodomesticos[1] = new Electrodomestico(70, 10);
+                    electrodomesticos[2] = new Electrodomestico(100, "Negro", 'B', 45);
+                    electrodomesticos[3] = new Television(15, 15);
+                    electrodomesticos[4] = new Lavadora(75, "AzuL", 'A', 40 , 35);
+                    electrodomesticos[5] = new Television();
+                    electrodomesticos[6] = new Lavadora();
+                    electrodomesticos[7] = new Television(25, "Fucsia", 'C', 27, 48, true);
+                    electrodomesticos[8] = new Lavadora(125, "gris", 'A', 60 , 65);
+                    electrodomesticos[9] = new Lavadora(55,  35);
+
+                    //TENGO QUE USAR EL DE PRECIO Y CORREGIR EN LOS BUILDERS PARA VER QUE ESTEN ACCURATE
+
+
+
 
 
                     break;
