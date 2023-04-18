@@ -3,7 +3,7 @@ package Guia5;
 public class Lavadora extends Electrodomestico {
     // CONSTANTES Y GUIAS PARA COMPROBAR ----------------------------------
 
-    protected int CARGA = 5;
+    protected static final int CARGA = 5;
 
     // ATRIBUTOS ----------------------------------
 

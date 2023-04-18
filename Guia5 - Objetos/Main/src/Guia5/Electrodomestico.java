@@ -3,16 +3,16 @@ package Guia5;
 public class Electrodomestico {
 
     // CONSTANTES Y GUIAS PARA COMPROBAR ----------------------------------
-    protected double PESO = 5;
-    protected String COLOR = "blanco";
-    protected int PRECIOBASE = 100;
-    protected Character CONSUMO = 'F';
-    protected String[] colores_disponibles = {"blanco", "negro", "rojo", "azul", "gris"};
-    protected Character[] consumos_disponibles = {'A', 'B', 'C', 'D', 'E', 'F'};
+    protected static final double PESO = 5;
+    protected static final String COLOR = "blanco";
+    protected static final int PRECIOBASE = 100;
+    protected static final Character CONSUMO = 'F';
+    protected static final String[] colores_disponibles = {"blanco", "negro", "rojo", "azul", "gris"};
+    protected static final Character[] consumos_disponibles = {'A', 'B', 'C', 'D', 'E', 'F'};
 
-    protected int[] tabla_consumo_precios = {100, 80, 60, 50, 30, 10};
-    protected int[] tabla_pesos = {19, 49, 79};
-    protected int[] tabla_pesos_precios = {10, 50, 80, 100};
+    protected static final int[] tabla_consumo_precios = {100, 80, 60, 50, 30, 10};
+    protected static final int[] tabla_pesos = {19, 49, 79};
+    protected static final int[] tabla_pesos_precios = {10, 50, 80, 100};
 
 
     // ATRIBUTOS ----------------------------------
