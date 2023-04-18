@@ -1,6 +1,7 @@
 import Guia5.Password;
 import Guia5.Persona;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -8,6 +9,8 @@ public class Main {
         String cont = "y";
         Scanner scan = new Scanner(System.in);
         int num_ej;
+
+        Random rand = new Random();
 
         while (cont.equals("y")) {
             System.out.println("Escriba el ejercicio que quieras realizar: ");
@@ -63,14 +66,31 @@ public class Main {
                 case 2:
                     System.out.println("Ejercicio 2.");
 
+                    int validos = 0;
+                    Password[] passws = new Password[10];
+                    boolean[] fuertes = new boolean[10];
+
                     Password pass1 = new Password();
                     Password pass2 = new Password(23);
                     System.out.println(pass1.getPassword() + pass1.esFuerte());
                     System.out.println(pass2.getPassword() + pass2.esFuerte());
 
+                    for (int i = 0; i < 10; i++) {
+                        Password pass = new Password(rand.nextInt(15) + 5);
+                        passws[i] = pass;
+                        fuertes[i] = pass.esFuerte();
+                        validos++;
+                    }
+
+                    for (int i = 0; i < validos; i++) {
+                        System.out.println(passws[i].getPassword() + "\n" + "Fuerte: " + fuertes[i]);
+                    }
 
                     break;
 
+                case 3:
+
+                    break;
 
                 default:
                     System.out.println("|X| ESCRIBA UN EJERCICIO VALIDO |X|");
