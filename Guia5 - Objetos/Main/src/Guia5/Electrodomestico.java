@@ -1,6 +1,8 @@
 package Guia5;
 
 public class Electrodomestico {
+
+    // CONSTANTES Y GUIAS PARA COMPROBAR ----------------------------------
     protected double PESO = 5;
     protected String COLOR = "blanco";
     protected int PRECIOBASE = 100;
@@ -39,8 +41,8 @@ public class Electrodomestico {
 
     public Electrodomestico(int precio_base, String color, Character consumo, double peso) {
         this.precio_base = precio_base;
-        this.color = color;
-        this.consumo = consumo;
+        this.color = comprobarColor(color);
+        this.consumo = comprobarConsumoEnergetico(consumo);
         this.peso = peso;
     }
 
@@ -61,6 +63,10 @@ public class Electrodomestico {
 
     public double getPeso() {
         return peso;
+    }
+
+    public void setPrecio_base(int precio_base) {
+        this.precio_base = precio_base;
     }
 
     // METODOS ----------------------------------
