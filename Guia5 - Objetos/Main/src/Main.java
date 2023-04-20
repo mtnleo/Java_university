@@ -102,7 +102,30 @@ public class Main {
                     electrodomesticos[8] = new Lavadora(125, "gris", 'A', 60 , 65);
                     electrodomesticos[9] = new Lavadora(55,  35);
 
-                    //TENGO QUE USAR EL DE PRECIO Y CORREGIR EN LOS BUILDERS PARA VER QUE ESTEN ACCURATE
+                    int contador_elec = 0;
+                    int contador_lav = 0;
+                    int contador_tele = 0;
+
+                    for (Electrodomestico elec: electrodomesticos) {
+                        int precio = elec.getPrecio_base();
+                        System.out.println("Precio = " + "$" + precio + " - Clase: " + elec.getClass().getSimpleName());
+
+                        if (elec instanceof Lavadora) {
+                            contador_elec += precio;
+                            contador_lav += precio;
+                        }
+                        else if (elec instanceof Television) {
+                            contador_elec += precio;
+                            contador_tele += precio;
+                        }
+                        else {
+                            contador_elec += precio;
+                        }
+                    }
+
+                    System.out.println("Precio Electrodomesticos = $" + contador_elec);
+                    System.out.println("Precio Lavadoras = $" + contador_lav);
+                    System.out.println("Precio Televisiones = $" + contador_tele);
 
 
 

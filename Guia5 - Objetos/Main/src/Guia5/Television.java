@@ -19,12 +19,14 @@ public class Television extends Electrodomestico {
 
     public Television(int precio, double peso) {
         super(precio, peso);
+        precioFinal();
     }
 
     public Television(int precio_base, String color, Character consumo, double peso, int resolucion, boolean tdt) {
         super(precio_base, color, consumo, peso);
         this.resolucion = resolucion;
         this.tdt = tdt;
+        precioFinal();
     }
 
     // GETTERS & SETTERS ----------------------------------
