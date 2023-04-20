@@ -127,10 +127,6 @@ public class Main {
                     System.out.println("Precio Lavadoras = $" + contador_lav);
                     System.out.println("Precio Televisiones = $" + contador_tele);
 
-
-
-
-
                     break;
 
                 default:
