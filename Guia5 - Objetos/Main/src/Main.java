@@ -129,6 +129,12 @@ public class Main {
 
                     break;
 
+                case 4:
+                    System.out.println("Ejercicio 4.");
+
+
+                    break;
+
                 default:
                     System.out.println("|X| ESCRIBA UN EJERCICIO VALIDO |X|");
 
