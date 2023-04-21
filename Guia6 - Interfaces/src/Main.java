@@ -1,5 +1,4 @@
-import Guia6.ArrayReales;
-import Guia6.Matematicas;
+import Guia6.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -44,6 +43,35 @@ public class Main {
 
                 case 3:
                     System.out.println("Ejercicio 3.");
+
+                    Numero num1 = new Numero(2);
+                    Numero num2 = new Numero(5);
+                    Numero num3 = new Numero(123);
+                    Numero num4 = new Numero(92);
+                    Numero num5 = new Numero(92);
+
+                    System.out.println("Numero " + num2.getNumero() + " es mayor a " + num1.getNumero() + ": " + num2.esMayor(num1));
+                    System.out.println("Numero " + num3.getNumero() + " es menor a " + num4.getNumero() + ": " + num3.esMenor(num4));
+                    System.out.println("Numero " + num4.getNumero() + " es igual a " + num5.getNumero() + ": " + num4.esIgual(num5));
+
+                    break;
+
+                case 4:
+                    System.out.println("Ejercicio 4.");
+
+                    Libro libro1 = new Libro("SKD2392", "El senior de los anillos", 1954);
+                    Libro libro2 = new Libro("HGK3212", "Harry Potter y el Prisionero de Azkaban", 1999);
+                    Revista revista1 = new Revista("GV5565", "Nat Geo", 2023, 5);
+                    Revista revista2 = new Revista("FGGD7655", "Time", 2006, 1);
+
+                    libro1.prestar();
+                    libro2.prestar();
+                    libro2.devolver();
+
+                    System.out.println(libro1.toString());
+                    System.out.println(libro2.toString());
+                    System.out.println(revista1.toString());
+                    System.out.println(revista2.toString());
 
 
                     break;

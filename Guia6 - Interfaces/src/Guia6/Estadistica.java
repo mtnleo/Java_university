@@ -1,6 +1,6 @@
 package Guia6;
 
-interface Estadisticas {
+public interface Estadistica {
     public double minimo();
     public double maximo();
     public double sumatorio();

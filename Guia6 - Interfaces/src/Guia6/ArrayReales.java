@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class ArrayReales implements Estadisticas{
-    private final ArrayList<Double> lista;
+public class ArrayReales implements Estadistica{
+    private ArrayList<Double> lista;
 
     /// BUILDER ---------------------------
 

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Matematicas implements Extremos {
-    private final ArrayList<Double> lista;
+    private ArrayList<Double> lista;
 
-    /// BUILDER ---------------------------
+    /// CONSTRUCTOR ---------------------------
 
     public Matematicas() {
         this.lista = new ArrayList<Double>();
