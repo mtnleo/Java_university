@@ -75,6 +75,11 @@ public class Main {
 
 
                     break;
+                    
+                case 5:
+                    System.out.println("Ejercicio 5.");
+                    
+                    break;
 
                 default:
                     System.out.println("|X| ESCRIBA UN EJERCICIO VALIDO |X|");
