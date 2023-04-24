@@ -52,10 +52,29 @@ public class Local {
 
     /// METODOS  -----------------------------
 
+    public void agregarPlato(Plato plato) {
+        platos.add(plato);
+    }
+
+    public void agregarMediodePago(MedioPago medioPago) {
+        medioDePago.add(medioPago);
+    }
+
+    public void agregarPedido(Pedido pedido) {
+        pedidos.add(pedido);
+    }
+
+    ///// MUESTRA
+
+    public void mostrarPlatos() {
+        for(Plato plato: platos) {
+            System.out.println(plato.toStringVer());
+        }
+    }
+
     @Override
     public String toString() {
         return "Local{" +
-                "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", direccion='" + direccion + '\'' +
                 '}';

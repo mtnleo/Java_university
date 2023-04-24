@@ -41,4 +41,19 @@ public class Plato {
     }
 
     /// METODOS
+
+    public String toStringPedido() {
+        return "Plato{" +
+                "nombre='" + nombre + '\'' +
+                ", costo=" + costo +
+                ", cantidadPedido=" + cantidadPedido +
+                '}';
+    }
+
+    public String toStringVer() {
+        return "Plato{" +
+                "nombre='" + nombre + '\'' +
+                ", costo=" + costo +
+                '}';
+    }
 }

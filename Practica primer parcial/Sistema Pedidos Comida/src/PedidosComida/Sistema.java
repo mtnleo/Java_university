@@ -1,6 +1,7 @@
 package PedidosComida;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Sistema {
     /// ATRIBUTOS -------------------------
@@ -61,4 +62,33 @@ public class Sistema {
             System.out.println(ped.toString());
         }
     }
+
+    //////////// BUSQUEDA
+
+    public Local buscarLocal(String nombre) {
+        Local encontrado = null;
+        for (Local loc: locales) {
+            if (loc.getNombre().toLowerCase().startsWith(nombre.toLowerCase())) {
+                encontrado = loc;
+                break;
+            }
+        }
+        return encontrado;
+    }
+
+    public Usuario buscarUsuario(String mail) {
+        Usuario encontrado = null ;
+
+        for (Usuario usu: usuarios) {
+            if (usu.getMail().toLowerCase().startsWith(mail.toLowerCase())) {
+                encontrado = usu;
+                break;
+            }
+        }
+
+        return encontrado;
+    }
+
+    //// PEDIR
+
 }

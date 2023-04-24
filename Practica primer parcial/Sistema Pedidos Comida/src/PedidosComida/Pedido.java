@@ -17,10 +17,10 @@ public class Pedido {
 
     /// CONSTRUCTOR -----------------------------
 
-    public Pedido(Usuario usuario, Local local, double precioTotal, String medioEntrega, MedioPago medioPago, String direccion, ArrayList<Plato> platos, double precioTotalRecargo) {
+    public Pedido(Usuario usuario, Local local, String medioEntrega, MedioPago medioPago, String direccion, ArrayList<Plato> platos) {
         this.usuario = usuario;
         this.local = local;
-        this.precioTotal = precioTotal;
+        this.precioTotal = calcularPrecioTotalPlatos(platos);
         this.medioEntrega = medioEntrega;
         this.medioPago = medioPago;
         this.direccionEntrega = direccion;
@@ -61,5 +61,13 @@ public class Pedido {
                 ", precioTotalRecargo=" + precioTotalRecargo +
                 ", completado=" + completado +
                 '}';
+    }
+
+    public double calcularPrecioTotalPlatos(ArrayList<Plato> platos) {
+        double total = 0;
+        for (Plato pla: platos) {
+            total += pla.getCantidadPedido() * pla.getCosto();
+        }
+        return total;
     }
 }
