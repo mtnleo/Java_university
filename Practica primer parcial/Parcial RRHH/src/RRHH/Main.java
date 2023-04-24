@@ -9,10 +9,6 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int num_ej;
 
-        Empleado emp1 = new Empleado("001", "Juan", "Perez", "Av. Rivadavia 1234", LocalDate.of(1990, 5, 20));
-        Empleado emp2 = new Empleado("002", "Maria", "Gomez", "Calle 9 de Julio 567", LocalDate.of(1995, 10, 15));
-        Empleado emp3 = new Empleado("003", "Pedro", "Gonzalez", "Av. San Martin 4321", LocalDate.of(1985, 3, 30));
-        Empleado emp4 = new Empleado("004", "Lucia", "Lopez", "Calle Belgrano 789", LocalDate.of(1992, 7, 8));
         Administrador admin1 = new Administrador("A0004", "Mariana", "Gomez", "Av. Corrientes 123", LocalDate.of(1989, 7, 15), "Recursos Humanos", 25000.0);
         Administrador admin2 = new Administrador("A0005", "Juan", "Marovich", "Calle 45 #123", LocalDate.of(1985, 11, 2), "Finanzas", 27000.0);
         Administrador admin3 = new Administrador("A0006", "Carla", "Lopez", "Calle 78 #567", LocalDate.of(1990, 3, 18), "Marketing", 26000.0);
@@ -29,6 +25,21 @@ public class Main {
         Repartidor rep3 = new Repartidor("Sofie", "Pedersen", 17000);
         Repartidor rep4 = new Repartidor("Mads", "Mortensen", 18000);
 
+        RecursosHumanos RRHH = new RecursosHumanos();
+
+        RRHH.agregarEmpleado(admin1);
+        RRHH.agregarEmpleado(admin2);
+        RRHH.agregarEmpleado(admin3);
+        RRHH.agregarEmpleado(admin4);
+        RRHH.agregarEmpleado(ven1);
+        RRHH.agregarEmpleado(ven2);
+        RRHH.agregarEmpleado(ven3);
+        RRHH.agregarEmpleado(ven4);
+        RRHH.agregarRepartidor(rep1);
+        RRHH.agregarRepartidor(rep2);
+        RRHH.agregarRepartidor(rep3);
+        RRHH.agregarRepartidor(rep4);
+
         while (cont.equals("y")) {
             System.out.println("Escriba el ejercicio que quieras realizar: ");
             num_ej = scan.nextInt();
@@ -36,12 +47,23 @@ public class Main {
 
             switch (num_ej) {
                 case 1:
-                    System.out.println("Ejercicio 1.");
+                    System.out.println("Mostrar empleados.");
+
+                    RRHH.mostrarEmpleados();
 
                     break;
 
                 case 2:
-                    System.out.println("Ejercicio 2.");
+                    System.out.println("Mostrar Repartidores.");
+
+                    RRHH.mostrarRepartidores();
+
+                    break;
+
+                case 3:
+                    System.out.println("Mostrar Sueldo Total Empleades.");
+
+                    System.out.println("Sueldo Total = " + RRHH.contarSueldoEmpleadosTotal());
 
                     break;
 

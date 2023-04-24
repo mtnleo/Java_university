@@ -14,7 +14,7 @@ public class Administrador extends Empleado {
     public Administrador() {
     }
 
-    public Administrador(String legajo, String nombre, String apellido, String direccion, LocalDate fechaNacimiento, String area, double sueldo) {
+    public Administrador(String legajo, String nombre, String apellido, String direccion, LocalDate fechaNacimiento, String area) {
         super(legajo, nombre, apellido, direccion, fechaNacimiento);
         this.area = area;
         this.sueldo = 15;

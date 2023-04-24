@@ -59,7 +59,9 @@ public class Repartidor {
     @Override
     public String toString() {
         return "Repartidor{" +
-                "sueldo=" + sueldo +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", sueldo=" + sueldo +
                 '}';
     }
 }

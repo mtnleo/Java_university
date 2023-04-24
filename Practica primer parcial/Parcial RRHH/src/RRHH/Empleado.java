@@ -3,7 +3,7 @@ package RRHH;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Empleado {
+public abstract class Empleado {
     /// ATRIBUTOS ------------------------------
 
     private String legajo;

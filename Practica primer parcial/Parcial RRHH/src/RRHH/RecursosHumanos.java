@@ -54,5 +54,31 @@ public class RecursosHumanos {
         repartidores.add(rep);
     }
 
+    // MOSTRAR EMPLEADOS
+
+    public void mostrarEmpleados() {
+        for (Empleado emp: empleados) {
+            System.out.println(emp.toString());
+        }
+    }
+
+    public void mostrarRepartidores() {
+        for (Repartidor rep: repartidores) {
+            System.out.println(rep.toString());
+        }
+    }
+
+    public double contarSueldoEmpleadosTotal() {
+        double contador = 0;
+        for (Empleado emp: empleados) {
+            if (emp instanceof Administrador) {
+                contador += ((Administrador) emp).getSueldo();
+            } else if (emp instanceof Vendedor) {
+                contador += ((Vendedor) emp).getSueldo();
+            }
+        }
+        return contador;
+    }
+
 
 }
