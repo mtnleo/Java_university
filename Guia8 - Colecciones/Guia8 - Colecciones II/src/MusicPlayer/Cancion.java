@@ -92,6 +92,15 @@ public class Cancion {
 
     // METODOS
 
+    private String pasarMinutosHoras(int minutos) {
+        int horas = minutos / 60;
+        int minutosRestantes = minutos - (horas * 60);
+
+        String resultado = String.valueOf(horas) + ":" + String.valueOf(minutosRestantes);
+
+        return resultado;
+    }
+
     private String verificarGenero(String genero) {
         Scanner scan = new Scanner(System.in);
 
@@ -111,5 +120,15 @@ public class Cancion {
         }
 
         return genero;
+    }
+
+    @Override
+    public String toString() {
+        String msg = nombre + "   -   " + pasarMinutosHoras(duracion) + "\n" + "By " + artista + "   -   " + album + " | " + genero;
+        if(invitado) {
+            msg = msg.concat("ft. " + artistaInvitado);
+        }
+
+        return msg;
     }
 }
