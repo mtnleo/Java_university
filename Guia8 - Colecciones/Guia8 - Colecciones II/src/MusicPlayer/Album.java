@@ -4,12 +4,12 @@ public final class Album {
     // ATRIBUTOS
 
     private final int anio;
-    private final int titulo;
+    private final String titulo;
     private final Artista artista;
 
     // CONSTRUCTORS
 
-    public Album(int anio, int titulo, Artista artista) {
+    public Album(int anio, String titulo, Artista artista) {
         this.anio = anio;
         this.titulo = titulo;
         this.artista = artista;
@@ -21,7 +21,7 @@ public final class Album {
         return anio;
     }
 
-    public int getTitulo() {
+    public String getTitulo() {
         return titulo;
     }
 

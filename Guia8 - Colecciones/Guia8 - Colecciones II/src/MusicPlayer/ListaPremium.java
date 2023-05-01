@@ -2,12 +2,12 @@ package MusicPlayer;
 
 import java.util.LinkedList;
 import java.util.Scanner;
-import java.util.spi.CalendarNameProvider;
 
 public class ListaPremium implements Reproduccion {
     // ATRIBUTOS
 
     private String nombre;
+    public Cancion reproduciendo;
     public LinkedList<Cancion> listaPremium;
 
     // CONSTRUCTORES
@@ -37,13 +37,19 @@ public class ListaPremium implements Reproduccion {
         System.out.println("Escriba el numero de la cancion a reproducir: ");
         int numer = scan.nextInt();
 
-        if (listaPremium.indexOf(numer-1) != -1) {
+        Cancion reproducida = listaPremium.get(numer-1);
 
+        if (reproducida == null) {
+            System.out.println("Cancion no encontrada T.T");
+            reproducida = listaPremium.get(0);
         }
+        System.out.println("Reproduciendo \n" + reproducida.toString());
+
+        this.reproduciendo = reproducida;
     }
 
-    public void CambiarCancion() {
-        
+    public void cambiarCancion() {
+        this.reproduciendo = listaPremium.get(listaPremium.indexOf(reproduciendo) + 1);
     }
 
     public void aniadirCancion(Cancion c) {
