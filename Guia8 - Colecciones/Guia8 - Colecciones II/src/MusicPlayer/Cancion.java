@@ -1,5 +1,7 @@
 package MusicPlayer;
 
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Cancion {
@@ -139,4 +141,6 @@ public class Cancion {
 
         return msg;
     }
+
 }
+

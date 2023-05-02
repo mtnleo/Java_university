@@ -7,26 +7,62 @@ public class Main {
         String cont = "y";
         Scanner scan = new Scanner(System.in);
         int num_ej;
+        String num_ej_letra;
 
-        ListaBasica listaBasica = new ListaBasica("Basic");
-        ListaPremium listaPremium = new ListaPremium("Premium");
+        Player player = new Player("Basic", "Premium");
 
-        HARDCODE.cargarCanciones(listaPremium, listaBasica);
+        HARDCODE.cargarCanciones(player.listaPremium, player.listaBasica);
 
         while (cont.equals("y")) {
             System.out.println("Escriba el ejercicio que quieras realizar: ");
-            num_ej = scan.nextInt();
+            num_ej_letra = scan.next();
             scan.nextLine();
 
-            switch (num_ej) {
-                case 1:
-                    System.out.println("Mostrar lista basica.");
+            if (num_ej_letra.charAt(0) == 'p' || num_ej_letra.charAt(0) == 'P') {
+                num_ej = 112;
+            } else {
+                num_ej = Integer.parseInt(num_ej_letra);
+            }
 
-                    listaBasica.verMiLista();
+            switch (num_ej) {
+                case 112:
+                    if (player.isPremium()) {
+                        if (player.listaPremium.reproduciendo != null) {
+                            player.pausaResumir();
+                        }
+                        else {
+                            System.out.println("No hay nada reproduciendose :P");
+                        }
+                    } else {
+                        if (player.listaBasica.reproduciendo != null) {
+                            player.pausaResumir();
+                        }
+                        else {
+                            System.out.println("No hay nada reproduciendose :P");
+                        }
+                    }
+
+                    break;
+
+                case 0:
+                    player.mostrarReproduciendo();
+
+                    break;
+
+                case 1:
+
+                    player.Reproducir();
 
                     break;
 
                 case 2:
+                    System.out.println("Mostrar lista basica.");
+
+                    player.listaBasica.verMiLista();
+
+                    break;
+
+                case 3:
                     System.out.println("Aniadir cancion basica");
 
                     Artista artista1 = new Artista("Taylor Swift", "Estados Unidos", "32");
@@ -34,28 +70,28 @@ public class Main {
 
                     Cancion cancion4 = new Cancion("Cornelia Street", 289, "Pop", album4, artista1);
 
-                    listaBasica.aniadirCancion(cancion4);
-
-                    break;
-
-                case 3:
-                    System.out.println("Remover lista basica.");
-
-                    listaBasica.eliminarCancion("Betty");
+                    player.listaBasica.aniadirCancion(cancion4);
 
                     break;
 
                 case 4:
+                    System.out.println("Remover lista basica.");
+
+                    player.listaBasica.eliminarCancion("Betty");
+
+                    break;
+
+                case 5:
                     System.out.println("Cambiar cancion basica.");
 
-                    listaBasica.cambiarCancion();
+                    player.listaBasica.cambiarCancion();
 
                     break;
 
                 case 6:
                     System.out.println("Mostrar lista premium.");
 
-                    listaPremium.verMiLista();
+                    player.listaPremium.verMiLista();
 
                     break;
 
@@ -68,14 +104,21 @@ public class Main {
                     Cancion cancion4p = new Cancion("The Man", 289, "Pop", album4p, artista1p);
 
 
-                    listaPremium.aniadirCancion(cancion4p);
+                    player.listaPremium.aniadirCancion(cancion4p);
 
                     break;
 
                 case 8:
                     System.out.println("Eliminar cancion lista premium.");
 
-                    listaPremium.eliminarCancion("Shake"); //shake it off
+                    player.listaPremium.eliminarCancion("Shake"); //shake it off
+
+                    break;
+
+                case 9:
+                    System.out.println("Ahora sos premium!");
+
+                    player.setPremium(true);
 
                     break;
 

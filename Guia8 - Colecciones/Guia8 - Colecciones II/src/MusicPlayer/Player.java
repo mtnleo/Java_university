@@ -10,9 +10,9 @@ public class Player {
 
     // CONSTRUCTORES
 
-    public Player(String nombre) {
-        listaBasica = new ListaBasica(nombre);
-        listaPremium = new ListaPremium(nombre);
+    public Player(String nombreBasica, String nombrePremium) {
+        listaBasica = new ListaBasica(nombreBasica);
+        listaPremium = new ListaPremium(nombrePremium);
         premium = false;
         pausa = true;
     }
@@ -32,17 +32,17 @@ public class Player {
     public void Reproducir() {
         if (premium) {
             listaPremium.Reproducir();
-        }
-        else {
+            this.pausa = false;
+        } else {
             listaBasica.Reproducir();
+            this.pausa = false;
         }
     }
 
     public void aniadirCancion(Cancion c) {
         if (premium) {
             listaPremium.aniadirCancion(c);
-        }
-        else {
+        } else {
             listaBasica.aniadirCancion(c);
         }
     }
@@ -50,8 +50,7 @@ public class Player {
     public void cambiarCancion() {
         if (premium) {
             listaPremium.cambiarCancion();
-        }
-        else {
+        } else {
             listaBasica.cambiarCancion();
         }
     }
@@ -59,8 +58,7 @@ public class Player {
     public void eliminarCancion(String c) {
         if (premium) {
             listaPremium.eliminarCancion(c);
-        }
-        else {
+        } else {
             listaBasica.eliminarCancion(c);
         }
     }
@@ -68,8 +66,7 @@ public class Player {
     public void verMiLista() {
         if (premium) {
             listaPremium.verMiLista();
-        }
-        else {
+        } else {
             listaBasica.verMiLista();
         }
     }
@@ -81,21 +78,22 @@ public class Player {
                 if (pausa) {
                     System.out.println("|| En pausa");
                 }
-            }
-            else {
+            } else {
                 System.out.println("No hay nada reproduciendose en este instante.");
             }
-        }
-        else {
+        } else {
             if (listaBasica.reproduciendo != null) {
                 System.out.println("Reproduciendo: \n" + listaBasica.reproduciendo.toString());
                 if (pausa) {
                     System.out.println("|| En pausa");
                 }
-            }
-            else {
+            } else {
                 System.out.println("No hay nada reproduciendose en este instante.");
             }
         }
+    }
+
+    public void pausaResumir() {
+        this.pausa = !this.pausa;
     }
 }
