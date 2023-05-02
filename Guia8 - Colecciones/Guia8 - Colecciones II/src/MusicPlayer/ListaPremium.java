@@ -77,14 +77,14 @@ public class ListaPremium implements Reproduccion {
         int i = 1;
         for (Cancion can: listaPremium) {
             System.out.println("| " + i + " |  " + can.toString());
-            i++;
+            i+=1;
         }
     }
 
     private Cancion buscarCancion(String nombre) {
         Cancion buscada = null;
         for (Cancion c: listaPremium) {
-            if (c.getNombre().toLowerCase().startsWith(nombre)) {
+            if (c.getNombre().toLowerCase().startsWith(nombre.toLowerCase())) {
                 buscada = c;
                 break;
             }

@@ -72,6 +72,7 @@ public class ListaBasica implements Reproduccion {
 
             System.out.println("| " + i + " |  " + c.toString());
 
+            i+=1;
             copia.push(c);
         }
 

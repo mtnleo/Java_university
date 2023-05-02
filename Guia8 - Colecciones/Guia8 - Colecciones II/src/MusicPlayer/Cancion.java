@@ -92,11 +92,19 @@ public class Cancion {
 
     // METODOS
 
-    private String pasarMinutosHoras(int minutos) {
-        int horas = minutos / 60;
-        int minutosRestantes = minutos - (horas * 60);
+    private String pasarMinutosHoras(int segundos) {
+        int minutos = segundos / 60;
+        int segundosRestantes = segundos - (minutos * 60);
 
-        String resultado = String.valueOf(horas) + ":" + String.valueOf(minutosRestantes);
+        String resultado;
+        if (segundosRestantes < 10) {
+            resultado = String.valueOf(minutos) + ":0" + String.valueOf(segundosRestantes);
+        }
+        else {
+            resultado = String.valueOf(minutos) + ":" + String.valueOf(segundosRestantes);
+        }
+
+
 
         return resultado;
     }
@@ -107,7 +115,7 @@ public class Cancion {
         boolean encontrado = false;
 
         for (String gen: generosAceptados) {
-            if (gen.equals(genero)) {
+            if (gen.equalsIgnoreCase(genero)) {
                 encontrado = true;
                 break;
             }
@@ -124,9 +132,9 @@ public class Cancion {
 
     @Override
     public String toString() {
-        String msg = nombre + "   -   " + pasarMinutosHoras(duracion) + "\n" + "By " + artista + "   -   " + album + " | " + genero;
+        String msg = nombre + "   -   " + pasarMinutosHoras(duracion) + "\n" + "By " + artista.getNombre() + "   -   " + album.getTitulo() + " | " + genero;
         if(invitado) {
-            msg = msg.concat("ft. " + artistaInvitado);
+            msg = msg.concat("ft. " + artistaInvitado.getNombre());
         }
 
         return msg;
