@@ -24,6 +24,11 @@ public class Main {
                 num_ej = Integer.parseInt(num_ej_letra);
             }
 
+            if (!player.isPremium() && num_ej > 5 && num_ej < 9) {
+                System.out.println("No tiene permiso para acceder a funciones premium! D:");
+                num_ej = 100;
+            }
+
             switch (num_ej) {
                 case 112:
                     if (player.isPremium()) {
@@ -124,7 +129,7 @@ public class Main {
 
 
                 default:
-                    System.out.println("|X| ESCRIBA UN EJERCICIO VALIDO |X|");
+                    System.out.println("|X| INTENTE NUEVAMENTE |X|");
 
                     break;
 
