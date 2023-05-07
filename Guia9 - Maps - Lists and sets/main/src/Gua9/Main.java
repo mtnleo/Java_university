@@ -51,6 +51,38 @@ public class Main {
                 case 2:
                     System.out.println("Ejercicio 2.");
 
+                    Calendario diasSemana = new Calendario();
+
+
+                    diasSemana.addDia("Lunes");
+                    diasSemana.addDia("Martes");
+                    diasSemana.addDia("Miercoles");
+                    diasSemana.addDia("Jueves");
+                    diasSemana.addDia("Viernes");
+                    diasSemana.addDia("Sabado");
+                    diasSemana.addDia("Domingo");
+
+                    diasSemana.addDiaPos(4, "Juernes");
+
+                    Calendario nuevaSemana = diasSemana;
+
+                    nuevaSemana.mostrarDias();
+
+                    System.out.println("\nPos 3: " + diasSemana.buscarDiaPos(3) + " - Pos 4: " + diasSemana.buscarDiaPos(4));
+                    System.out.println("Primer dato: " + diasSemana.buscarDiaPos(0) + " - Ultima pos: " + diasSemana.buscarDiaPos(diasSemana.getTamanioListaDias() - 1));
+
+                    System.out.println("Eliminar 'Juernes': " + diasSemana.eliminarDia("Juernes") + " - Eliminar 'sabamingo': " + diasSemana.eliminarDia("Sabamingo"));
+                    System.out.println("Contiene lunes: " + diasSemana.buscarDia("Lunes"));
+
+                    System.out.println("Dias ordenados: ");
+                    diasSemana.ordenarDias();
+
+                    diasSemana.mostrarDias();
+
+                    System.out.println("\nBorrar lista.");
+                    diasSemana.borrarLista();
+                    diasSemana.mostrarDias();
+
                     break;
 
                 default:
@@ -60,7 +92,7 @@ public class Main {
 
             }
 
-            System.out.println("--- Deseas continuar viendo ejercicios? (y/n)");
+            System.out.println("\n--- Deseas continuar viendo ejercicios? (y/n)");
             cont = scan.nextLine();
 
         }
