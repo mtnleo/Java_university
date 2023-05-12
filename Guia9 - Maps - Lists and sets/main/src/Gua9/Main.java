@@ -85,6 +85,45 @@ public class Main {
 
                     break;
 
+                case 3:
+                    System.out.println("Ejercicio 3.");
+
+                    Jugadores plantilla = new Jugadores();
+                    Jugadores plantilla1 = new Jugadores();
+                    Jugadores plantilla2 = new Jugadores();
+
+                    plantilla.aniadirJugador("Maximiliano Romero");
+                    plantilla.aniadirJugador("Ricardo Álvarez");
+                    plantilla.aniadirJugador("Federico Mancuello");
+                    plantilla.aniadirJugador("Pablo Galdames");
+                    plantilla.aniadirJugador("Lucas Robertone");
+                    plantilla.aniadirJugador("Francisco Ortega");
+                    plantilla.aniadirJugador("Miguel Brizuela");
+                    plantilla.aniadirJugador("Lautaro Gianetti");
+                    plantilla.aniadirJugador("Luis Abram");
+                    plantilla.aniadirJugador("Hernán De La Fuente");
+                    plantilla.aniadirJugador("Matías Borgogno");
+                    plantilla.aniadirJugador("Matías Borgogno");
+                    plantilla.aniadirJugador("Matías Borgogno");
+                    plantilla1.aniadirJugador("Sergio Busquets");
+                    plantilla1.aniadirJugador("Lionel Messi");
+                    plantilla2.aniadirJugador("Lautaro Gianetti");
+                    plantilla2.aniadirJugador("Maximiliano Romero");
+
+                    plantilla.mostrarJugadores();
+
+                    System.out.println("Esta Neymar Jr. en la plantilla? " + plantilla.chequearExiste("Neymar Jr."));
+                    System.out.println("Esta Luis Abram en la plantilla? " + plantilla.chequearExiste("Luis Abram"));
+                    System.out.println("Se encuentra la plantilla 2 en la plantilla 0? " + plantilla.contiene(plantilla2.getPlantilla()));
+                    System.out.println("Se encuentra la plantilla 1 en la plantilla 0? " + plantilla.contiene(plantilla1.getPlantilla()));
+                    System.out.println("Plantilla tras unir plantilla 1 y plantilla 2" );
+                    plantilla1.agregarPlantilla(plantilla2.getPlantilla());
+                    plantilla1.mostrarJugadores();
+                    plantilla2.removerTodosJugadores();
+                    System.out.println("Tamanio de plantilla 2 tras borrar todos los jugadores: " + plantilla2.sizePlantilla());
+
+                    break;
+
                 default:
                     System.out.println("|X| ESCRIBA UN EJERCICIO VALIDO |X|");
 
