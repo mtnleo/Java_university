@@ -47,5 +47,11 @@ public class ListaGenerica<T> {
         }
     }
 
+    public static <U extends Comparable<U>> void imprimirLista(List<U> lista) {
+        for (U elemento: lista) {
+            System.out.println(elemento.toString());
+        }
+    }
+
 
 }
