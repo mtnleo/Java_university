@@ -15,7 +15,7 @@ public class Main {
 
             switch (num_ej) {
                 case 1:
-                    System.out.println("Ejercicio 1.");
+                    System.out.println("Ejercicio 1 y 2.");
 
                     // lista strings
                     ListaGenerica<String> miListaGenerica = new ListaGenerica<>();
@@ -26,10 +26,10 @@ public class Main {
                     miListaGenerica.agregarElemento("Argelia");
                     miListaGenerica.agregarElemento("Madagascar");
 
-                    System.out.println("La lista comprende " + miListaGenerica.getSize() + " elementos.");
-                    System.out.println("Elemento en la posicion 0: " + miListaGenerica.buscarElementoPosicion(0));
-                    System.out.println("------- MOSTRAR LISTA ----------");
-                    miListaGenerica.mostrarLista();
+                    //System.out.println("La lista comprende " + miListaGenerica.getSize() + " elementos.");
+                    //System.out.println("Elemento en la posicion 0: " + miListaGenerica.buscarElementoPosicion(0));
+                    //System.out.println("------- MOSTRAR LISTA ----------");
+                    //miListaGenerica.mostrarLista();
 
                     // lista characters
                     ListaGenerica<Character> miListaGenericaChars = new ListaGenerica<>();
@@ -44,6 +44,13 @@ public class Main {
                     System.out.println("Elemento en la posicion 0: " + miListaGenericaChars.buscarElementoPosicion(0));
                     System.out.println("------- MOSTRAR LISTA ----------");
                     miListaGenericaChars.mostrarLista();
+                    System.out.println("Lista luego de cambiarle O y A: ");
+                    miListaGenericaChars.intercambiarElementos('O', 'A');
+                    miListaGenericaChars.mostrarLista();
+                    System.out.println("Lista intentando cambiarle F y Z (no existe): ");
+                    miListaGenericaChars.intercambiarElementos('F', 'Z');
+
+
 
 
                     break;
