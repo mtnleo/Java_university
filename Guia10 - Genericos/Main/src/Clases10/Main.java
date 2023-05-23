@@ -77,18 +77,55 @@ public class Main {
                 case 4:
                     System.out.println("Ejercicio 4.");
 
-                    ListaGenerica<String> listaParquesNacionales = new ListaGenerica<>();
+                    ListaGenerica<Integer> listaIntegers = new ListaGenerica<>();
 
-                    listaParquesNacionales.agregarElemento("Yosemite");
-                    listaParquesNacionales.agregarElemento("YellowStone");
-                    listaParquesNacionales.agregarElemento("Nahuel Huapi");
-                    listaParquesNacionales.agregarElemento("Los Arrayanes");
-                    listaParquesNacionales.agregarElemento("Los Glaciares");
-                    listaParquesNacionales.agregarElemento("Perito Moreno");
-                    listaParquesNacionales.agregarElemento("Tierra del Fuego");
+                    listaIntegers.agregarElemento(3);
+                    listaIntegers.agregarElemento(2);
+                    listaIntegers.agregarElemento(5);
+                    listaIntegers.agregarElemento(8);
+                    listaIntegers.agregarElemento(7);
+                    listaIntegers.agregarElemento(8);
+                    listaIntegers.agregarElemento(0);
 
 
-                    ListaGenerica.imprimirLista(listaParquesNacionales);
+                    ListaGenerica.imprimirLista(listaIntegers.getLista());
+
+                    break;
+
+                case 5:
+                    System.out.println("Ejercicio 5.");
+
+                    //ESTO ESTÁ MAL -> ClaseHijaGenerica<ClaseHijaGenerica<ClaseHijaGenerica<ClaseHijaGenerica>>> hijita = new ClaseHijaGenerica<ClaseHijaGenerica<>>();
+
+                    break;
+
+                case 6:
+                    System.out.println("Ejercicio 6.");
+
+                    String comp1 = "Pasto";
+                    String comp2 = "Pasto";
+                    String comp3 = "NotPasto";
+
+                    System.out.println(comp1 + " + " + comp2 + " son iguales? -> " + ListaGenerica.comparar(comp1, comp2));
+                    System.out.println(comp1 + " + " + comp3 + " son iguales? -> " + ListaGenerica.comparar(comp1, comp3));
+
+                    break;
+
+                case 7:
+                    System.out.println("Ejercicio 7.");
+
+                    Par<String, Integer> parKV1 = new Par<>("Perito Moreno has.", 724000);
+                    Par<String, Integer> parKV2 = new Par<>("Perito Moreno has.", 12841);
+
+                    System.out.println(parKV1.key + " -> " + parKV1.value);
+                    System.out.println(parKV2.key + " -> " + parKV2.value);
+
+                    break;
+
+                case 8:
+                    System.out.println("Ejercicio 8.");
+
+
 
                     break;
 

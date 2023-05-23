@@ -47,10 +47,24 @@ public class ListaGenerica<T> {
         }
     }
 
-    public static <U extends Comparable<U>> void imprimirLista(List<U> lista) {
-        for (U elemento: lista) {
-            System.out.println(elemento.toString());
+    public List<T> getLista() {
+        return lista;
+    }
+
+    // OTROS METODOS RANDOM
+
+    public static void imprimirLista(List<? extends Comparable<Integer>> lista) {
+        for (int i = 0; i < lista.size(); i+=1) {
+            System.out.println(lista.get(i).toString());
         }
+    }
+
+    public static <U> boolean comparar (U el1, U el2) {
+        return el1.equals(el2);
+    }
+
+    public static void imprimirElementos(List<? extends U> lista) {
+
     }
 
 

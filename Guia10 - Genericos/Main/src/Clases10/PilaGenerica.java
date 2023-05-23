@@ -2,7 +2,7 @@ package Clases10;
 
 import java.util.Stack;
 
-public class PilaGenerica<T extends Number> {
+public class PilaGenerica<T extends Number>  {
     // ATRIBUTOS
 
     private final Stack<T> pila = new Stack<T>();
