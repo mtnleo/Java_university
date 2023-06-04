@@ -7,7 +7,7 @@ import java.util.Set;
 public class Colegio {
     // ATRIBUTOS
 
-    private HashMap<String, LinkedList<String>> alumnes;
+    private final HashMap<String, LinkedList<String>> alumnes;
 
     // CONSTRUCTORES
 
@@ -18,10 +18,9 @@ public class Colegio {
     // METODOS
 
     public void agregarAlumnx(String nacionalidad, String nombreApellido) {
-        if (alumnes.containsKey(nacionalidad)) {
+        try {
             alumnes.get(nacionalidad).add(nombreApellido);
-        }
-        else {
+        } catch (NullPointerException e) {
             alumnes.put(nacionalidad, new LinkedList<String>());
             alumnes.get(nacionalidad).add(nombreApellido);
         }
@@ -44,7 +43,7 @@ public class Colegio {
 
     public boolean borrar(String nombreAlumno) {
         Set<String> keys = alumnes.keySet();
-        boolean encontrado = false;
+        boolean encontrado;
         for (String key: keys) {
             encontrado = alumnes.get(key).remove(nombreAlumno);
             if (encontrado) {

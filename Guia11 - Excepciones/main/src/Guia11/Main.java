@@ -77,7 +77,7 @@ public class Main {
 
                         break;
 
-                    case 4: // En este pude resolverlo sin tener que utilizar try/catch
+                    case 4: // En este pude resolverlo sin tener que utilizar try/catch, pero lo usé en el de agregarAlumnx
                         System.out.println("Ejercicio 4.");
 
                         Colegio colegio = new Colegio();
