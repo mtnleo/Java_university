@@ -1,5 +1,6 @@
 package Guia11;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -10,12 +11,13 @@ public class Main {
 
         while (cont.equals("y")) {
             System.out.println("Escriba el ejercicio que quieras realizar: ");
-            num_ej = scan.nextInt();
-            scan.nextLine();
+            try {
+                num_ej = scan.nextInt();
+                scan.nextLine();
 
-            switch (num_ej) {
-                case 1:
-                    System.out.println("Ejercicio 1.");
+                switch (num_ej) {
+                    case 1:
+                        System.out.println("Ejercicio 1.");
                     /* QUE ESTA MAL EN ESTE CODIGO?
                     try
                     {
@@ -34,10 +36,10 @@ public class Main {
                     acerca de cual fue el error, por lo que no lo puede resolver más adelante
                      */
 
-                    break;
+                        break;
 
-                case 2:
-                    System.out.println("Ejercicio 2.");
+                    case 2:
+                        System.out.println("Ejercicio 2.");
 
                     /*
                     Explique lo que sucede el siguiente código y por qué.
@@ -64,30 +66,65 @@ public class Main {
                     y luego retorna 2. Si no lo es retorna 1. El finally no se que pinta ahi
                      */
 
-                    break;
+                        break;
 
-                case 3:
-                    System.out.println("Ejercicio 3.");
+                    case 3:
+                        System.out.println("Ejercicio 3.");
 
-                    JuegoAdivinar juego1 = new JuegoAdivinar();
+                        JuegoAdivinar juego1 = new JuegoAdivinar();
 
-                    juego1.mainLoop();
+                        juego1.mainLoop();
 
-                    break;
+                        break;
 
-                default:
-                    System.out.println("|X| ESCRIBA UN EJERCICIO VALIDO |X|");
+                    case 4: // En este pude resolverlo sin tener que utilizar try/catch
+                        System.out.println("Ejercicio 4.");
 
-                    break;
+                        Colegio colegio = new Colegio();
 
+                        colegio.agregarAlumnx("Colombia", "Pedro Ramirez");
+                        colegio.agregarAlumnx("Colombia", "James Rodriguez");
+                        colegio.agregarAlumnx("Colombia", "Juana Quintana");
+                        colegio.agregarAlumnx("Argentina", "Diego Peretti");
+                        colegio.agregarAlumnx("Argentina", "Lionel Messi");
+                        colegio.agregarAlumnx("Argentina", "Eugenia Pareto");
+                        colegio.agregarAlumnx("Islandia", "Lars Gunderson");
+                        colegio.agregarAlumnx("Islandia", "Marcus Larson");
+
+
+                        System.out.println(colegio.cuantos());
+                        System.out.println("------------------");
+                        colegio.mostrarNacionalidades();
+                        System.out.println("------------------");
+                        colegio.verNacionalidad("Argentina");
+                        System.out.println("------------------");
+                        System.out.println("Se intenta eliminar Pedro Ramirez: \n Eliminado? " + colegio.borrar("Pedro Ramirez"));
+                        System.out.println("Se intenta eliminar Ilkay Gundogan: \n Eliminado? " + colegio.borrar("Ilkay Gundogan"));
+
+
+                        break;
+
+
+                    default:
+                        System.out.println("|X| ESCRIBA UN EJERCICIO VALIDO |X|");
+
+                        break;
+
+                }
+
+                System.out.println("--- Deseas continuar viendo ejercicios? (y/n)");
+                cont = scan.nextLine();
+
+
+            } catch (InputMismatchException ex) {
+                System.out.println("Escriba un valor valido");
+                scan.nextLine();
             }
 
-            System.out.println("--- Deseas continuar viendo ejercicios? (y/n)");
-            cont = scan.nextLine();
 
         }
 
         scan.close();
-    }
 
+    }
 }
