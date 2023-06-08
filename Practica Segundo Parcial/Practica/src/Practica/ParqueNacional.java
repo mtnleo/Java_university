@@ -1,22 +1,42 @@
 package Practica;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import com.google.gson.Gson;
 
-public class ParqueNacional {
+public class ParqueNacional implements Comparable<ParqueNacional> {
     // ATRIBUTOS
     private String nombre;
     private int hectareas;
+    private String provinciaMayoritaria;
     private HashMap<String, LinkedList<Animal>> biosfera;
     private HashSet<String> biomas_aceptados;
 
     // CONSTRUCTORES
+    public ParqueNacional(String nombre) {
+        this.nombre = nombre;
+        this.hectareas = 0;
+        this.biosfera = new HashMap<String, LinkedList<Animal>>();
+        this.biomas_aceptados = new HashSet<String>();
+    }
+
     public ParqueNacional(String nombre, int hectareas) {
         this.nombre = nombre;
         this.hectareas = hectareas;
         this.biosfera = new HashMap<String, LinkedList<Animal>>();
         this.biomas_aceptados = new HashSet<String>();
+    }
+
+    // GETTERS AND SETTERS
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getHectareas() {
+        return hectareas;
     }
 
     // METODOS
@@ -73,4 +93,9 @@ public class ParqueNacional {
         }
     }
 
+    @Override
+    public int compareTo(ParqueNacional o) { // para poder comparar en clase ParquesArgentina
+        if (o.hectareas == 0) { return -1; }
+        return Integer.compare(this.hectareas, o.hectareas);
+    }
 }

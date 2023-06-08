@@ -1,9 +1,30 @@
 package Practica;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         ParqueNacional nahuelHuapi = new ParqueNacional("Nahuel Huapi", 10000);
+        ParqueNacional glaciarPeritoMoreno = new ParqueNacional("Glaciar Perito Moreno");
+        ParqueNacional iguazu = new ParqueNacional("Iguazu");
 
+        // CARGAR A PARQUES ARGENTINA
+        ParquesArgentina parques = new ParquesArgentina();
+        parques.agregarParqueNacional(nahuelHuapi);
+        parques.agregarParqueNacional(iguazu);
+        parques.agregarParqueNacional(glaciarPeritoMoreno);
+
+        //parques.mostrarParquesCargados();
+
+        // leer del txt
+        ArrayList<String> arregloNombresTxt = parques.leerNombreParquesTxt();
+        ParquesArgentina.leerArrayListNombreParques(arregloNombresTxt);
+
+        // agregar a txt
+        //parques.cargarNombreParquesTxt();
+
+
+        /// agregar bioma aceptado
         nahuelHuapi.agregarBiomaAceptado("Bosque Andino-Patagónico");
         nahuelHuapi.agregarBiomaAceptado("Estepa Patagónica");
         nahuelHuapi.agregarBiomaAceptado("Ambientes lacustres");
@@ -35,15 +56,15 @@ public class Main {
         nahuelHuapi.agregarAnimal(animal9);
 
         // incitando al error
-        Animal castor = new Animal("Castor", "Roedor", "Bosque Subpolar", 5000, PeligroExtincion.PELIGRO);
-        nahuelHuapi.agregarAnimal(castor);
+        //Animal castor = new Animal("Castor", "Roedor", "Bosque Subpolar", 5000, PeligroExtincion.PELIGRO);
+        //nahuelHuapi.agregarAnimal(castor);
 
         // MOSTRAR
-        System.out.println("\n--------------------");
-        nahuelHuapi.mostrarBiosfera();
+        //System.out.println("\n--------------------");
+        //nahuelHuapi.mostrarBiosfera();
 
         // otro error!
-        nahuelHuapi.mostrarAnimales("Sabana");
+        //nahuelHuapi.mostrarAnimales("Sabana");
 
 
     }
