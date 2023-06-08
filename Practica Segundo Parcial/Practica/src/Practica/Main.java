@@ -3,7 +3,7 @@ package Practica;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) { /*
         ParqueNacional nahuelHuapi = new ParqueNacional("Nahuel Huapi", 10000);
         ParqueNacional glaciarPeritoMoreno = new ParqueNacional("Glaciar Perito Moreno");
         ParqueNacional iguazu = new ParqueNacional("Iguazu");
@@ -56,16 +56,29 @@ public class Main {
         nahuelHuapi.agregarAnimal(animal9);
 
         // incitando al error
-        //Animal castor = new Animal("Castor", "Roedor", "Bosque Subpolar", 5000, PeligroExtincion.PELIGRO);
-        //nahuelHuapi.agregarAnimal(castor);
+        Animal castor = new Animal("Castor", "Roedor", "Bosque Subpolar", 5000, PeligroExtincion.PELIGRO);
+        nahuelHuapi.agregarAnimal(castor);
 
         // MOSTRAR
-        //System.out.println("\n--------------------");
-        //nahuelHuapi.mostrarBiosfera();
+        System.out.println("\n--------------------");
+        nahuelHuapi.mostrarBiosfera();
 
         // otro error!
-        //nahuelHuapi.mostrarAnimales("Sabana");
+        nahuelHuapi.mostrarAnimales("Sabana");
 
+        // CARGAR INSTANCIA PARQUENACIONAL A JSON
+        //nahuelHuapi.cargarParqueNacionalJson();
+        */
+
+        // LEER, CARGAR E INSTANCIAR PARQUENACIONAL JSON
+        ArrayList<ParqueNacional> arregloParques = ParqueNacional.leerParqueNacionalJson();
+
+        for (ParqueNacional parque: arregloParques) {
+            if (parque != null) {
+                System.out.println(parque.getNombre());
+                parque.mostrarBiosfera();
+            }
+        }
 
     }
 }
