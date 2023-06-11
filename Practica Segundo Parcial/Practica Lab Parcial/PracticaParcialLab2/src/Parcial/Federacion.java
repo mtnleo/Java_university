@@ -1,6 +1,9 @@
 package Parcial;
 
+import java.io.*;
 import java.util.HashSet;
+import com.google.gson.Gson;
+
 
 public class Federacion {
     // ATRIBUTOS
@@ -8,7 +11,7 @@ public class Federacion {
     private String nombre;
     private String fechaFundacion;
     private int copas; //3 papaaaa
-    private HashSet<Integrante> plantel;
+    private final HashSet<Integrante> plantel;
 
     // CONSTRUCTORES
 
@@ -23,7 +26,7 @@ public class Federacion {
         this.nombre = nombre;
         this.fechaFundacion = fechaFundacion;
         this.copas = copas;
-        this.plantel = new HashSet<Integrante>();
+        this.plantel = new HashSet<>();
     }
 
     // GETTERS AND SETTERS
@@ -118,6 +121,56 @@ public class Federacion {
             break;
         }
         return encontrado;
+    }
+
+    public void cargarJson(String path) {
+        File file = new File(path);
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+
+            Gson gson = new Gson();
+
+            Federacion agregar = this;
+
+            gson.toJson(agregar, Federacion.class, bufferedWriter);
+
+            bufferedWriter.close();
+        }
+        catch (IOException e) {
+            System.out.println("Error cargando el Json");
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static Federacion leerJson(String path) {
+        Federacion federacion = null;
+        File file = new File(path);
+
+        if (file.exists()) {
+            if (file.canRead()) {
+                try {
+                    BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+
+                    Gson gson = new Gson();
+
+                    federacion = gson.fromJson(bufferedReader, Federacion.class);
+
+                    bufferedReader.close();
+                }
+                catch (IOException e) {
+                    System.out.println("Problema leyendo del Json (" + path + ").");
+                    System.out.println(e.getMessage());
+                }
+            }
+            else {
+                System.out.println("No hay permisos para leer del archivo (" + path + ").");
+            }
+        }
+        else {
+            System.out.println("El archivo json provisto no existe (" + path + ").");
+        }
+
+        return federacion;
     }
 
 

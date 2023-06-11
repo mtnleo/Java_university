@@ -2,7 +2,7 @@ package Parcial;
 
 import java.util.Objects;
 
-public abstract class Integrante {
+public class Integrante {
     // INTEGRANTE
 
     private String nombre;

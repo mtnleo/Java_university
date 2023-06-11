@@ -42,6 +42,22 @@ public class Main {
 
                     break;
 
+                case 3:
+                    System.out.println("CARGAR AL JSON");
+
+                    Federacion afaJson = HARDCODE.cargarFederacion();
+                    afaJson.cargarJson("afa.json");
+
+                    break;
+
+                case 4:
+                    System.out.println("LEER DEL AFA.JSON");
+
+                    Federacion afaJsonLeer = Federacion.leerJson("afa.json");
+                    afaJsonLeer.mostrarFederacion();
+
+                    break;
+
                 default:
                     System.out.println("|X| ESCRIBA UN EJERCICIO VALIDO |X|");
 
