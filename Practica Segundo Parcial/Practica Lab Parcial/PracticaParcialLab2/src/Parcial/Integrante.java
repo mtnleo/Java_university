@@ -54,6 +54,14 @@ public abstract class Integrante {
     }
 
     @Override
+    public String toString() {
+        return
+                "\nNombre = " + nombre +
+                "\nApellido =" + apellido +
+                "\nEdad = " + edad;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

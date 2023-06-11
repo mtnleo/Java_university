@@ -36,6 +36,15 @@ public class Entrenador extends Integrante implements Entrenamiento, Partido {
 
     // METODOS
 
+
+    @Override
+    public String toString() {
+        return "Tipo: Entrenador" +
+                super.toString() +
+                "\nSistemaJuego = " + sistemaJuego +
+                "\nEstilo= " + estilo ;
+    }
+
     @Override
     public boolean equals(Object o) { // si bien no se puede agregar más de un entrenador, si el usuario vuelve a ingresar
         if (this == o) return true;   // el mismo entrenador, entonces no dará mensaje de error.

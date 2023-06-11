@@ -36,6 +36,15 @@ public class Futbolista extends Integrante implements Partido {
 
     // METODOS
 
+
+    @Override
+    public String toString() {
+        return "Tipo: Futbolista " +
+                super.toString() +
+                "\nNro. Camiseta = " + nroCamiseta +
+                "\nPuesto=" + puesto;
+    }
+
     @Override
     public void jugarPartido() {
         System.out.println("Jugador jugando partido");

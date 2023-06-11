@@ -36,6 +36,15 @@ public class Masajista extends Integrante implements Asistencia {
 
     // METODOS
 
+
+    @Override
+    public String toString() {
+        return "Tipo: Masajista" +
+                super.toString() +
+                "\nTitulo = " + titulo +
+                "\nAnios Experiencia=" + aniosExperiencia;
+    }
+
     @Override
     public void asistirJugador() {
         System.out.println("Masajista asiste al jugador.");

@@ -26,6 +26,14 @@ public class AyudanteCampo extends Integrante implements Entrenamiento, Partido 
 
     // METODOS
 
+
+    @Override
+    public String toString() {
+        return "Tipo: Ayudante de Campo" +
+                super.toString() +
+                "\nMetodologia = " + metodologia ;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
