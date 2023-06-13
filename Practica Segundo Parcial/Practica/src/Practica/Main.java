@@ -71,14 +71,26 @@ public class Main {
         */
 
         // LEER, CARGAR E INSTANCIAR PARQUENACIONAL JSON
-        ArrayList<ParqueNacional> arregloParques = ParqueNacional.leerParqueNacionalJson();
+        /*ArrayList<ParqueNacional> arregloParques = ParqueNacional.leerParqueNacionalJson();
 
         for (ParqueNacional parque: arregloParques) {
             if (parque != null) {
                 System.out.println(parque.getNombre());
                 parque.mostrarBiosfera();
             }
-        }
+        }*/
+
+        ParqueNacional nuevo = new ParqueNacional("Nahuel Huapi", 10000);
+        ParqueNacional otro = new ParqueNacional("Perito Moreno", 5400);
+        otro = nuevo;
+        System.out.println(nuevo.getNombre());
+        System.out.println(nuevo.hashCode());
+        System.out.println(otro.getNombre());
+        System.out.println(otro.hashCode());
+        nuevo.setNombre("Uyuni");
+        System.out.println(otro.getNombre());
+        System.out.println(otro.hashCode());
+
 
     }
 }

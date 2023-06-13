@@ -51,6 +51,10 @@ public class ParqueNacional implements Comparable<ParqueNacional> {
         return hectareas;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     // METODOS
     public void agregarBiomaAceptado(String bioma) {
         biomas_aceptados.add(bioma);
